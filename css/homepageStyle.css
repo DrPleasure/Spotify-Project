@@ -6,6 +6,10 @@ body {
 .container-fluid {
 }
 
+/* -------------------------
+SIDEBAR 
+---------------------------*/
+
 #sidebar {
   background-color: #000000;
 }
@@ -15,14 +19,54 @@ body {
   object-fit: cover;
 }
 
-.flex-align-center {
-  display: flex;
-  align-items: center;
-}
-
 .sidebar-align-left {
   margin-left: 0.75rem;
 }
+
+.sidebar-text {
+  font-weight: bold;
+}
+
+/* -------------------------
+PROFILE SECTION 
+---------------------------*/
+#profile-div,
+.arrow-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#profile-div .bi {
+  font-size: 0.85rem;
+  color: white;
+}
+
+#profile button,
+#profile .badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#profile button {
+  border-radius: 30px;
+  padding: 0.15rem 0.5rem;
+}
+
+#profile .badge {
+  padding: 0;
+  align-self: center;
+  font-size: 2rem;
+}
+
+#profile .bi {
+  font-size: 1.5rem;
+}
+
+/* -------------------------
+UTILITY CLASSES
+---------------------------*/
 
 .bi {
   font-size: 1.5rem;
@@ -33,13 +77,19 @@ body {
   transform: scale(1.1);
 }
 
-/* .bi-plus-square {
-  background-color: white;
-  color: black;
-} */
+.round {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.sidebar-text {
-  font-weight: bold;
+.transparent {
+  background-color: rgba(0, 0, 0, 1);
+  border: transparent;
 }
 
 .grow {
@@ -54,44 +104,7 @@ body {
   padding-top: 1.5rem;
 }
 
-#profile-div,
-.arrow-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#profile-div .bi {
-  font-size: 0.85rem;
-  color: white;
-}
-
-.round {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+.flex-align-center {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-#profile button,
-#profile .badge {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.pill-border {
-  border-radius: 30px;
-}
-
-#profile .badge {
-  padding: 0;
-}
-
-.badge {
-  align-self: center;
-  font-size: 2rem;
 }

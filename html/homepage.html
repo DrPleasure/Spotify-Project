@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <!-- MAIN CONTENT SECTION -->
+        <!-- PROFILE SECTION -->
         <div class="column col-10 padding-top">
           <div id="profile-div">
             <div class="arrow-div">
@@ -53,16 +53,23 @@
               <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
             </div>
 
-            <div class="btn-group">
+            <div class="btn-group" id="profile">
               <button
-                class="btn btn-secondary btn-sm dropdown-toggle"
                 type="button"
+                class="btn btn-secondary dropdown-toggle transparent"
                 data-toggle="dropdown"
+                data-display="static"
                 aria-expanded="false"
               >
-                Small button
+                <i class="bi bi-person-circle mr-2"></i>SpotifyProfile
               </button>
-              <div class="dropdown-menu">...</div>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3">
+                <button class="dropdown-item" type="button">Action</button>
+                <hr />
+                <button class="dropdown-item" type="button">Another action</button>
+                <hr />
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
             </div>
           </div>
         </div>
