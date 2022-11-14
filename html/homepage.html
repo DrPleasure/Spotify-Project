@@ -322,14 +322,43 @@
     </div>
 
     <!-- FIXED ROW -->
-    <div class="container-fluid" id="fixedContainer">
+    <div id="fixedContainer">
+      <!-- LEFT CONTAINER -->
       <div id="fixed-left">
-        <img class="img-fluid mr-2" src="/assets/purple-heart.png" alt="" />
+        <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" />
         <div class="title-left mr-2">
           <p class="bold">Another One Bites The Dust - Remastered 2011</p>
           <p class="faded">Queen</p>
         </div>
-        <div class="icons-left"><i class="bi bi-heart mr-2"></i><i class="bi bi-pip"></i></div>
+        <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
+      </div>
+
+      <!-- MIDDLE CONTAINER -->
+      <div id="fixed-middle">
+        <div id="middle-top">
+          <div class="shuffle"><i class="bi bi-shuffle faded mr-4"></i></div>
+          <div class="skip-start"><i class="bi bi-skip-start faded mr-4"></i></div>
+          <div class="play"><i class="bi bi-play-fill faded mr-4 round-white text-dark"></i></div>
+          <div class="skip-end"><i class="bi bi-skip-end faded mr-4"></i></div>
+          <div class="repeat"><i class="bi bi-repeat faded mr-4"></i></div>
+        </div>
+        <div id="middle-bottom">
+          <div class="startTime mr-2 faded">0:12</div>
+          <div id="totalAndProgress">
+            <div class="progress"></div>
+            <div class="total"></div>
+          </div>
+          <div class="endTime ml-2 faded">3:34</div>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTAINER -->
+      <div id="fixed-right">
+        <div class="icons-right">
+          <i class="bi bi-blockquote-right mr-2"></i><i class="bi bi-pc-display mr-2"></i
+          ><i class="bi bi-volume-up mr-2"></i>
+        </div>
+        <div class="volume"></div>
       </div>
     </div>
 
