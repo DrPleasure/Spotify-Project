@@ -11,11 +11,11 @@
 }
 
 .margintop-high {
-  margin-top: 19rem;
+  margin-top: 16rem;
 }
 
 .marginbottom-high {
-  margin-bottom: 19rem;
+  margin-bottom: 16rem;
 }
 
 .table-title {
@@ -51,7 +51,7 @@ hr {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-
+  color: black;
   font-size: 11px;
   line-height: 14px;
   display: -webkit-box;
@@ -69,4 +69,8 @@ hr {
   font-family: Montserrat, sans-serif;
   text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 0 18px rgba(0, 0, 0, 0.2);
   padding: 10px;
+}
+
+body {
+  height: 100%;
 }
