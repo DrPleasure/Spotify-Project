@@ -1,18 +1,97 @@
 body {
-  background-color: aqua;
+  background-image: linear-gradient(#300b05, black);
+  color: white;
+}
+
+.container-fluid {
+}
+
+#sidebar {
+  background-color: #000000;
 }
 
 #logo img {
-  width: 2.5rem;
+  width: 9rem;
   object-fit: cover;
-}
-
-#logo p {
-  margin: 0;
-  font-size: 1.5rem;
 }
 
 .flex-align-center {
   display: flex;
   align-items: center;
+}
+
+.sidebar-align-left {
+  margin-left: 0.75rem;
+}
+
+.bi {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.bi:hover {
+  transform: scale(1.1);
+}
+
+/* .bi-plus-square {
+  background-color: white;
+  color: black;
+} */
+
+.sidebar-text {
+  font-weight: bold;
+}
+
+.grow {
+  transition: transform 350ms ease-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}
+
+.padding-top {
+  padding-top: 1.5rem;
+}
+
+#profile-div,
+.arrow-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#profile-div .bi {
+  font-size: 0.85rem;
+  color: white;
+}
+
+.round {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile button,
+#profile .badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pill-border {
+  border-radius: 30px;
+}
+
+#profile .badge {
+  padding: 0;
+}
+
+.badge {
+  align-self: center;
+  font-size: 2rem;
 }

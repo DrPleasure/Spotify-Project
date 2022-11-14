@@ -14,29 +14,57 @@
       crossorigin="anonymous"
     />
 
+    <!-- BOOTSTRAP icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="/css/homepageStyle.css" />
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="column col-2">
-          <div id="logo" class="flex-align-center">
-            <img class="img-fluid" src="/assets/spotify.png" alt="spotify logo" />
-            <p>Spotify</p>
+        <!-- SIDEBAR -->
+        <div class="column col-2 padding-top" id="sidebar">
+          <div id="logo" class="flex-align-center mb-4 grow">
+            <img class="img-fluid" src="/assets/Spotify-Logo-White.jpeg" alt="spotify logo" />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero alias, illum non officia recusandae architecto
-            culpa minima deserunt, cum dolore sed. Quam minus praesentium cum voluptates, cumque repellendus illo!
-            Atque.
-          </p>
+          <div id="home" class="sidebar-align-left grow">
+            <i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span>
+          </div>
+          <div id="search" class="sidebar-align-left grow">
+            <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
+          </div>
+          <div id="library" class="sidebar-align-left mb-4 grow">
+            <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
+          </div>
+          <div id="library" class="sidebar-align-left grow">
+            <i class="bi bi-plus-square mr-3"></i><span class="sidebar-text">Create Playlist</span>
+          </div>
+          <div id="library" class="sidebar-align-left grow">
+            <i class="bi bi-balloon-heart-fill mr-3"></i><span class="sidebar-text">Liked Songs</span>
+          </div>
         </div>
-        <div class="column col-10">
-          CONTENT
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus earum rem quia vitae! Maxime odio, beatae
-            mollitia alias a harum recusandae deserunt quod rem, eaque sapiente vel tenetur, sunt hic!
-          </p>
+
+        <!-- MAIN CONTENT SECTION -->
+        <div class="column col-10 padding-top">
+          <div id="profile-div">
+            <div class="arrow-div">
+              <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
+              <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
+            </div>
+
+            <div class="btn-group">
+              <button
+                class="btn btn-secondary btn-sm dropdown-toggle"
+                type="button"
+                data-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Small button
+              </button>
+              <div class="dropdown-menu">...</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
