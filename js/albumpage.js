@@ -8,9 +8,28 @@ const options = {
   },
 };
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=Psy", options)
+fetch("https://deezerdevs-deezer.p.rapidapi.com/album/5942207", options)
   .then((response) => response.json())
-  .then((response) => console.log(response))
+  .then((data) => {
+    console.log(data);
+    let results = data.results;
+
+    let albumTr = document.createElement(`tr`);
+    albumTr.innerHTML = `<tr>
+            <th>${data.nb_tracks}</th>
+            <td> <span class="table-title"> ${data.title} </span>
+            </br>
+            ${data.artist.name}
+            </td>
+            <td> ${data.duration} </td>
+       
+          </tr>`;
+
+    let container = document.getElementById(`table-body`);
+
+    container.appendChild(albumTr);
+  })
+
   .catch((err) => console.error(err));
 
 // Function to toggle pause symbol onClick Play-button
