@@ -1,0 +1,76 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+/* import fonts that mimic SPOTIFY PAGE */
+
+.lineheight-low {
+  line-height: 1;
+}
+
+.lineheight-high {
+  line-height: 5;
+}
+
+.margintop-high {
+  margin-top: 16rem;
+}
+
+.marginbottom-high {
+  margin-bottom: 16rem;
+}
+
+.table-title {
+  font-size: 22px;
+}
+
+i.bi-play-circle {
+  font-size: 70px;
+}
+
+i {
+  font-size: 50px;
+}
+
+th i {
+  font-size: 24px;
+}
+
+hr {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.customsize {
+  height: 5rem;
+}
+
+.spotify-green {
+  background-color: #1db954;
+}
+
+.icon-span {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: black;
+  font-size: 11px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Montserrat, sans-serif;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 0 18px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+body {
+  height: 100%;
+}
