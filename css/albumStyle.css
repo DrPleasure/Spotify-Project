@@ -26,6 +26,14 @@ i.bi {
   font-size: 40px;
 }
 
+i.bis {
+  font-size: 40px;
+}
+
+i.fas {
+  font-size: 25px;
+}
+
 hr {
   margin-left: 50px;
   margin-right: 50px;
@@ -69,4 +77,13 @@ body {
 
 .table-dark {
   background-color: #121212;
+}
+
+#more {
+  color: grey;
+}
+
+#more:hover {
+  color: white;
+  font-weight: bold;
 }
