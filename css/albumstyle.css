@@ -15,13 +15,58 @@
 }
 
 .marginbottom-high {
-  margin-bot: 19rem;
+  margin-bottom: 19rem;
 }
 
 .table-title {
   font-size: 22px;
 }
 
+i.bi-play-circle {
+  font-size: 70px;
+}
+
 i {
-  size: 3 rem;
+  font-size: 50px;
+}
+
+th i {
+  font-size: 24px;
+}
+
+hr {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.customsize {
+  height: 5rem;
+}
+
+.spotify-green {
+  background-color: #1db954;
+}
+
+.icon-span {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  font-size: 11px;
+  line-height: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: Montserrat, sans-serif;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 0 18px rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
