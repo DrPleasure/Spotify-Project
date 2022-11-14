@@ -91,10 +91,6 @@ GOOD MORNING Section
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* -------------------------
-RECENTLY PLAYED
----------------------------*/
-
 #recentlyPlayed-div {
   display: flex;
   justify-content: space-between;
@@ -115,6 +111,38 @@ RECENTLY PLAYED
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: bolder;
+}
+
+.card-body {
+  height: 100px;
+}
+
+/* -------------------------
+FIXED ROW
+---------------------------*/
+#fixedContainer {
+  padding: 0.5rem;
+  background-color: black;
+  margin: 0 15px;
+}
+#fixed-left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#fixed-left img {
+  width: 55px;
+  object-fit: cover;
+}
+
+.title-left p {
+  margin: 0;
+}
+
+#fixed-left .bi {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* -------------------------
@@ -192,4 +220,12 @@ UTILITY CLASSES
 
 .line-clamp-1 {
   -webkit-line-clamp: 1;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.faded {
+  color: rgba(255, 255, 255, 0.4);
 }
