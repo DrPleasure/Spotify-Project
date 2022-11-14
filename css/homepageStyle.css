@@ -7,8 +7,8 @@ body {
 }
 
 /* -------------------------
-SIDEBAR 
----------------------------*/
+  SIDEBAR 
+  ---------------------------*/
 
 #sidebar {
   background-color: #000000;
@@ -28,8 +28,8 @@ SIDEBAR
 }
 
 /* -------------------------
-PROFILE SECTION 
----------------------------*/
+  PROFILE SECTION 
+  ---------------------------*/
 #profile-div,
 .arrow-div {
   display: flex;
@@ -65,8 +65,8 @@ PROFILE SECTION
 }
 
 /* -------------------------
-UTILITY CLASSES
----------------------------*/
+  UTILITY CLASSES
+  ---------------------------*/
 
 .bi {
   font-size: 1.5rem;
