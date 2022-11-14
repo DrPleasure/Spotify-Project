@@ -127,6 +127,8 @@ FIXED ROW
   display: flex;
   justify-content: start;
   align-items: center;
+  position: sticky;
+  bottom: 0;
 }
 
 /* -----------
