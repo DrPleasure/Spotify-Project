@@ -1,43 +1,59 @@
+// GET URLS
+
 // API INTEGRATION
 
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "2a4edcf965msh1f0bb1eb4e8f093p1d4fd8jsne157a33abe8e",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzczOGE4NjNhN2ZjNDAwMTU5N2VjMzAiLCJpYXQiOjE2Njg1MTgwODIsImV4cCI6MTY2OTcyNzY4Mn0.ipvXFSEjwvKS-fHtYA6nLPawiy4Nh2gO6-lqu-ZMOkI",
   },
 };
 
 // Fetch and DOM Manipulation to fill in the table with the songlist including: 1 - track number, 2 - song title + artist, 3 - duration
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/album/1208585", options)
+fetch(
+  "https://striveschool-api.herokuapp.com/api/deezer/album/75621062",
+  options
+)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-    let results = data.results;
-    let seconds = data.duration;
+    let results = data;
 
-    let albumTr = document.createElement(`tr`);
-    albumTr.innerHTML = `<tr>
-            <th>${data.nb_tracks}</th>
-            <td> <span class="table-title"> ${data.title} </span>
+    console.log(results);
+
+    for (let i = 0; i < results.tracks.data.length; i++) {
+      let song = results.tracks.data[i];
+      console.log(song);
+
+      let seconds = song.duration;
+
+      let albumTr = document.createElement(`tr`);
+      albumTr.innerHTML = `<tr>
+            <th>${[results.tracks.data[i] + 1]}</th>
+            <td> <span class="table-title"> ${song.title} </span>
             </br>
-            ${data.artist.name}
+            ${song.artist.name}
             </td>
             <td> ${secondsConvert(seconds)} </td>
        
           </tr>`;
 
-    let container = document.getElementById(`table-body`);
+      let container = document.getElementById(`table-body`);
 
-    container.appendChild(albumTr);
+      container.appendChild(albumTr);
+    }
   })
 
   .catch((err) => console.error(err));
 
 // Fetch and DOM Manipulation to dynamically fill the album page header with album cover image, album, album title, and misc
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/album/1208585", options)
+fetch(
+  "https://striveschool-api.herokuapp.com/api/deezer/album/75621062",
+  options
+)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -86,3 +102,14 @@ $(".bis").click(function () {
 function secondsConvert(s) {
   return (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s;
 }
+
+// Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
+/*
+const anchor = document.getElementById("myAnchor");
+const queryString = anchor.search; // Returns:'?q=123'
+
+// Further parsing:
+
+const params = new URLSearchParams(window.location.search);
+const q = parseInt(params.get("id")); // is the number 123
+*/
