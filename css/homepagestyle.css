@@ -76,12 +76,8 @@ body {
   width: 50%;
 }
 
-#searchInput {
-  background-color: #000000;
-}
-
 #resetInput {
-  background-color: red;
+  background-color: black;
 }
 
 /* -------------------------
