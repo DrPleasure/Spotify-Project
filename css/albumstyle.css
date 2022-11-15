@@ -91,3 +91,12 @@ body {
   color: white;
   font-weight: bold;
 }
+
+table {
+  width: 100%;
+}
+
+body {
+  background-image: none;
+  background-color: #913275;
+}

@@ -66,16 +66,16 @@ fetch(
 
     let albumDiv = document.createElement(`div`);
     albumDiv.innerHTML = ` <div  class="row d-flex">
-              <div id="album-image" class="col-3"> <img class="img-fluid" src="${
-                data.cover
+              <div id="album-image" class="col-4"> <img   src="${
+                data.cover_medium
               }"> </div>
-              <div class="col-9 margintop-high lineheight-low"><p>ALBUM</p> </br>
+              <div class="col-8  lineheight-low"><p>ALBUM</p> </br>
                   <h1> ${data.title} </h1> </br>
                       <div class="row d-flex">
                    <p id="artist"> <img src="${data.artist.picture}" ${
       data.artist.name
     } </p> ᐧ <p id=""> ${year}
-      </p> ᐧ <p> ${data.nb_tracks}, ${secondsConvert(seconds)} </p>
+      </p> ᐧ <p> ${data.nb_tracks}, ${secondsToHms(seconds)} </p>
                       </div>
               </div>
               
@@ -101,6 +101,18 @@ $(".bis").click(function () {
 // Function convert seconds to minutes:seconds format
 function secondsConvert(s) {
   return (s - (s %= 60)) / 60 + (9 < s ? ":" : ":0") + s;
+}
+
+function secondsToHms(d) {
+  d = Number(d);
+  var h = Math.floor(d / 3600);
+  var m = Math.floor((d % 3600) / 60);
+  var s = Math.floor((d % 3600) % 60);
+
+  var hDisplay = h > 0 ? h + (h == 1 ? " hr " : " hr ") : "";
+  var mDisplay = m > 0 ? m + (m == 1 ? " min " : " min ") : "";
+
+  return hDisplay + mDisplay;
 }
 
 // Let an <a id="myAnchor" href="/en-US/docs/Location.search?q=123"> element be in the document
