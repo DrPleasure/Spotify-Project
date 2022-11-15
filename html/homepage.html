@@ -38,17 +38,21 @@
           <div id="library" class="sidebar-align-left mb-4 grow">
             <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
           </div>
-          <div id="library" class="sidebar-align-left grow">
+          <div id="library" class="mb-2 sidebar-align-left grow">
             <i class="bi bi-plus-square mr-3"></i><span class="sidebar-text">Create Playlist</span>
           </div>
           <div id="library" class="sidebar-align-left grow">
-            <i class="bi bi-balloon-heart-fill mr-3"></i><span class="sidebar-text">Liked Songs</span>
+            <img
+              class="img-fluid img-small mr-3"
+              src="/assets/purple-heart.png"
+              alt="white heart on purple background"
+            /><span class="sidebar-text">Liked Songs</span>
           </div>
         </div>
 
-        <!-- PROFILE SECTION -->
         <div class="column col-10 padding-top">
-          <div id="profile-div">
+          <!-- PROFILE SECTION -->
+          <div id="profile-div" class="mb-4">
             <div class="arrow-div">
               <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
               <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
@@ -62,7 +66,7 @@
                 data-display="static"
                 aria-expanded="false"
               >
-                <i class="bi bi-person-circle mr-2"></i>SpotifyProfile
+                <i class="bi bi-person-circle mr-2"></i><span class="truncate">SpotifyProfile and asdf</span>
               </button>
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3">
                 <button class="dropdown-item" type="button">Action</button>
@@ -73,7 +77,289 @@
               </div>
             </div>
           </div>
+
+          <!-- GOOD MORNING Section -->
+          <h2>Good Morning</h2>
+          <div class="row mt-4 row-cols-5" id="goodMorning">
+            <div class="col justify-content-start mb-3 grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start mb-3 grow">
+              <img class="img-fluid img-goodMorning" src="/assets/purple-heart.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start mb-3 grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start mb-3 grow">
+              <img class="img-fluid img-goodMorning" src="/assets/purple-heart.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/purple-heart.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/purple-heart.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+            <div class="col justify-content-start grow">
+              <img class="img-fluid img-goodMorning" src="/assets/purple-heart.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div>
+          </div>
+
+          <!-- RECENTLY PLAYED Section -->
+          <div id="recentlyPlayed-div" class="mt-4">
+            <h4 id="recentlyPlayedHeader">Recently Played</h4>
+            <span id="seeAll" class="grow">SEE ALL</span>
+          </div>
+
+          <div class="row mt-4 row-cols-8 mx-n1" id="recentlyPlayed">
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card titleCard title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SHOWS TO TRY Section -->
+          <div id="recentlyPlayed-div" class="mt-4">
+            <div>
+              <h4 id="recentlyPlayedHeader">Recently Played</h4>
+              <span id="podcastsToTry">Podcasts we think you'll get hooked on</span>
+            </div>
+
+            <span id="seeAll" class="grow">SEE ALL</span>
+          </div>
+
+          <div class="row mt-4 row-cols-8 mx-n1" id="recentlyPlayed">
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card titleCard title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2">
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col px-1">
+              <div class="card px-3 py-3 bg-recentlyPlayed grow">
+                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
+                <div class="card-body px-0">
+                  <h5 class="card-title line-clamp-1">Card title</h5>
+                  <p class="card-text line-clamp-2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- FIXED ROW -->
+    <div id="fixedContainer">
+      <!-- LEFT CONTAINER -->
+      <div id="fixed-left">
+        <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" />
+        <div class="title-left mr-2">
+          <p class="bold">Another One Bites The Dust - Remastered 2011</p>
+          <p class="faded">Queen</p>
+        </div>
+        <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
+      </div>
+
+      <!-- MIDDLE CONTAINER -->
+      <div id="fixed-middle">
+        <div id="middle-top">
+          <div class="shuffle"><i class="bi bi-shuffle faded mr-4"></i></div>
+          <div class="skip-start"><i class="bi bi-skip-start faded mr-4"></i></div>
+          <div class="play"><i class="bi bi-play-fill faded mr-4 round-white text-dark"></i></div>
+          <div class="skip-end"><i class="bi bi-skip-end faded mr-4"></i></div>
+          <div class="repeat"><i class="bi bi-repeat faded mr-4"></i></div>
+        </div>
+        <div id="middle-bottom">
+          <div class="startTime mr-2 faded">0:12</div>
+          <div id="totalAndProgress">
+            <div class="progress"></div>
+            <div class="total"></div>
+          </div>
+          <div class="endTime ml-2 faded">3:34</div>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTAINER -->
+      <div id="fixed-right">
+        <div class="icons-right">
+          <i class="bi bi-blockquote-right mr-2"></i><i class="bi bi-pc-display mr-2"></i
+          ><i class="bi bi-volume-up mr-2"></i>
+        </div>
+        <div class="volume"></div>
       </div>
     </div>
 
