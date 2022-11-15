@@ -10,7 +10,7 @@ const options = {
 
 // Fetch and DOM Manipulation to fill in the table with the songlist including: 1 - track number, 2 - song title + artist, 3 - duration
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/album/5942207", options)
+fetch("https://deezerdevs-deezer.p.rapidapi.com/album/1208585", options)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -37,7 +37,7 @@ fetch("https://deezerdevs-deezer.p.rapidapi.com/album/5942207", options)
 
 // Fetch and DOM Manipulation to dynamically fill the album page header with album cover image, album, album title, and misc
 
-fetch("https://deezerdevs-deezer.p.rapidapi.com/album/5942207", options)
+fetch("https://deezerdevs-deezer.p.rapidapi.com/album/1208585", options)
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
@@ -50,15 +50,15 @@ fetch("https://deezerdevs-deezer.p.rapidapi.com/album/5942207", options)
 
     let albumDiv = document.createElement(`div`);
     albumDiv.innerHTML = ` <div  class="row d-flex">
-              <div id="album-image" class="col-3"> <img class="img-fluid" ${
+              <div id="album-image" class="col-3"> <img class="img-fluid" src="${
                 data.cover
-              }> </div>
+              }"> </div>
               <div class="col-9 margintop-high lineheight-low"><p>ALBUM</p> </br>
                   <h1> ${data.title} </h1> </br>
                       <div class="row d-flex">
-                   <p id="artist"> artistpicture ${
-                     data.artist.name
-                   } </p> ᐧ <p id=""> ${year}
+                   <p id="artist"> <img src="${data.artist.picture}" ${
+      data.artist.name
+    } </p> ᐧ <p id=""> ${year}
       </p> ᐧ <p> ${data.nb_tracks}, ${secondsConvert(seconds)} </p>
                       </div>
               </div>
