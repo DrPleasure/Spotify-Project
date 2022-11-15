@@ -72,8 +72,19 @@ body {
   font-size: 1.5rem;
 }
 
+.customizeInput {
+  width: 50%;
+}
+
+#searchInput {
+  background-color: #000000;
+}
+
+#resetInput {
+  background-color: red;
+}
+
 /* -------------------------
-<<<<<<< HEAD
   UTILITY CLASSES
   ---------------------------*/
 
