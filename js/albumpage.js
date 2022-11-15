@@ -31,7 +31,7 @@ fetch(
 
       let albumTr = document.createElement(`tr`);
       albumTr.innerHTML = `<tr>
-            <th>${[results.tracks.data[i] + 1]}</th>
+            <th>${[i] * 1 + 1}</th>
             <td> <span class="table-title"> ${song.title} </span>
             </br>
             ${song.artist.name}
