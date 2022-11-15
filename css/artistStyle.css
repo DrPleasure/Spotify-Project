@@ -1,0 +1,232 @@
+body {
+    /* background-image: linear-gradient(#300b05, black); */
+    color: white;
+background-color: #000000;
+  }
+  
+  .container-fluid {
+  }
+  
+  /* -------------------------
+  SIDEBAR 
+  ---------------------------*/
+  
+  #sidebar {
+    background-color: #000000;
+  }
+  
+  #logo img {
+    width: 9rem;
+    object-fit: cover;
+  }
+  
+  .sidebar-align-left {
+    margin-left: 0.75rem;
+  }
+  
+  .sidebar-text {
+    font-weight: bold;
+  }
+  
+  /* -------------------------
+  PROFILE SECTION 
+  ---------------------------*/
+  #profile-div,
+  .arrow-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #profile-div .bi {
+    font-size: 0.85rem;
+    color: white;
+  }
+  
+  #profile button,
+  #profile .badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #profile button {
+    border-radius: 30px;
+    padding: 0.15rem 0.5rem;
+  }
+  
+  #profile .badge {
+    padding: 0;
+    align-self: center;
+    font-size: 2rem;
+  }
+  
+  #profile .bi {
+    font-size: 1.5rem;
+  }
+  
+  /* -------------------------
+  UTILITY CLASSES
+  ---------------------------*/
+  
+  .bi {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .bi:hover {
+    transform: scale(1.1);
+  }
+  
+  .round {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .transparent {
+    background-color: rgba(0, 0, 0, 1);
+    border: transparent;
+  }
+  
+  .grow {
+    transition: transform 350ms ease-out;
+  }
+  
+  .grow:hover {
+    transform: scale(1.05);
+  }
+  
+  .padding-top {
+    padding-top: 1.5rem;
+  }
+  
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+  .currentsongplaylist{
+    background-image: linear-gradient(to bottom,#404040,black);
+  }
+  .followArtist{
+    display: flex;
+    margin-left: 10px;
+    gap:15px;
+  }
+  .followArtist span{
+    padding-top: 10px;
+  }
+
+  .followArtist .bi{
+    color: green;
+    font-size: 2.7rem;
+    
+    
+  }
+  .followArtist button{
+    width: 100px;
+    height:30px;
+    align-self: center;
+  }
+  .Currentsong{
+    position: relative;
+    display: flex;
+  }
+  .monthlylistners{
+    position: absolute;
+   align-self: center;
+   margin-inline: 10px;
+   margin-top: 155px;
+   font-size: 14px;
+  }
+  .monthlylistners h1{
+    font-size: 3rem;
+    text-transform: capitalize;
+  }
+  .monthlylistners .bi{
+    color: #2778D8;
+
+  }
+  .currentsongplaying{
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 10px;
+  }
+  .button{
+    align-self: center;
+    border: 0.3px solid ;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+  }
+  .Artistpick{
+    margin-right: 10%;
+  }
+  .artistpickplaylist{
+    gap: 10px;
+  }
+  .postedby img{
+    border-radius: 70%;
+   width: 20px;
+   height: 20px;
+  }
+  .postedby{
+    color:#979797;
+  }
+  .postedby h6{
+    color:white;
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+  td:hover{
+    color: green;
+    cursor: pointer;
+    transform: scale(1.1)
+  }
+  .table{
+    color: white;
+  }
+  .playlisttable a{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .playingnowcontainer{
+    background-color: #191919;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+  
+    padding-inline: 10px;
+  }
+  .playingnow{
+    display: flex;
+    gap:10px;
+  }
+  .playing{
+    display: flex;
+    gap: 7px;
+    align-self: center;
+  }
+  .playing p{
+    font-size: 10px;
+  }
+  .playing .bi{
+    font-size: 0.7rem;
+  }
+  .playingnow .bi{
+    font-size: 1.3rem;
+  }
+  .minivolume{
+    display: flex;
+    gap:10px;
+  }
+  .minivolume .bi{
+    font-size: 1rem;
+  }
+ 
