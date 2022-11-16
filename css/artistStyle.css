@@ -109,6 +109,9 @@ background-color: #000000;
     display: flex;
     align-items: center;
   }
+  .Currentsong{
+object-fit: cover;
+  }
   .currentsongplaylist{
     background-image: linear-gradient(to bottom,#404040,black);
   }
