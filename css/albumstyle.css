@@ -246,3 +246,9 @@ div #card-play:hover {
 .more-by {
   margin-top: 50px;
 }
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
