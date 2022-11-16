@@ -6,20 +6,6 @@ DOM elements
 const search = document.getElementById("inputSearch"); // search input
 const reset = document.querySelector(".input-group-prepend"); // reset div
 
-// console the input value
-// const seeInputValue = () => {
-
-//   const input = document.getElementById("inputSearch").value;
-//   console.log(input);
-
-//   const endpoint = `${input}`;
-
-//   console.log({ endpoint });
-
-//   return endpoint;
-// };
-// search.addEventListener("keyup", seeInputValue);
-
 // reset the input value
 const resetInput = () => {
   const input = document.getElementById("inputSearch");
@@ -40,9 +26,6 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZjZmQyYWQ0YmUzZDAwMTU4NDYwMzgiLCJpYXQiOjE2NjgwODcwODIsImV4cCI6MTY2OTI5NjY4Mn0.VtbiHHI8R5YkZzRvBB0wBIO4SqtTZr10KGYVPHIVfOc",
   },
 };
-
-// const API_url = search.addEventListener("keyup", seeInputValue);
-// console.log({ API_url });
 
 window.onload = async () => {
   // ASYNC AWAIT APPROACH
