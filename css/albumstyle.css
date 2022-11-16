@@ -146,7 +146,7 @@ body {
 
 #song-table {
   background: linear-gradient(#2d1027, 1%, #121212);
-  width: 150.4vh;
+  width: 100%;
 }
 
 tr {
