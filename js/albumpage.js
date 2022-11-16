@@ -66,16 +66,16 @@ fetch(
 
     let albumDiv = document.createElement(`div`);
     albumDiv.innerHTML = ` <div  class="row d-flex">
-              <div id="album-image" class="col-4"> <img   src="${
+              <div id="album-image" class="col-3"> <img class="img-fluid"  src="${
                 data.cover_medium
               }"> </div>
-              <div class="col-8  lineheight-low"><p>ALBUM</p> </br>
+              <div id="album-info" class="col-8  lineheight-low"><p style="font-size: 20px; font-weight: bold"; >ALBUM</p> </br>
                   <h1> ${data.title} </h1> </br>
-                      <div class="row d-flex">
-                   <p id="artist"> <img src="${data.artist.picture}" ${
+                      <div class="row  d-flex" id="album-data">
+                   <p id="artist"> <img src="${data.artist.picture}">  ${
       data.artist.name
-    } </p> ᐧ <p id=""> ${year}
-      </p> ᐧ <p> ${data.nb_tracks}, ${secondsToHms(seconds)} </p>
+    } · </p>  <p id=""> ${year} ·
+      </p>  <p> ${data.nb_tracks} songs, ${secondsToHms(seconds)}. </p>
                       </div>
               </div>
               
