@@ -132,12 +132,12 @@ const seeArtistValue = async () => {
   const songs = band.data;
   console.log({ songs });
   if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
-  songs.forEach(({ artist: { id, picture_big, link, name } }, index) => {
+  songs.forEach(({ artist: { id, picture_big, link, name }, duration }, index) => {
     console.log(id);
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./artistpage.html?artistId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}')">
+                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -186,7 +186,7 @@ const random = () => {
 };
 random();
 
-const seeRandomAlbums = () => {};
+// const seeRandomAlbums = () => {};
 
 // search.addEventListener("keyup", );
 
