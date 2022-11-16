@@ -172,16 +172,21 @@ background-color: #000000;
     width: 80px;
     text-align: center;
   }
+  .artistpickplaylist{
+    width: 70px;
+    height: 70px;
+  }
   .Artistpick{
     margin-right: 10%;
   }
-  .artistpickplaylist{
-    gap: 10px;
-  }
-  .postedby img{
+  .postedImg img{
     border-radius: 70%;
    width: 20px;
    height: 20px;
+  }
+  .postedImg{
+    font-size: 10px;
+    color:#979797;
   }
   .postedby{
     color:#979797;
@@ -190,6 +195,12 @@ background-color: #000000;
     color:white;
     margin-top: 7px;
     margin-bottom: 0;
+    font-size: 13px;
+  }
+  .artpickby{
+    display: flex;
+    /* gap:5px */
+
   }
   td:hover{
     color: green;
