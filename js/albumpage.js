@@ -1,5 +1,11 @@
 // GET URLS
 
+const params = new URLSearchParams(window.location.search).get("albumId");
+
+/* const q = parseInt(params.get("id")); // is the number 123 */
+
+console.log(params);
+
 // API INTEGRATION
 
 const options = {
@@ -12,25 +18,26 @@ const options = {
 
 // Fetch and DOM Manipulation to fill in the table with the songlist including: 1 - track number, 2 - song title + artist, 3 - duration
 
-fetch(
-  "https://striveschool-api.herokuapp.com/api/deezer/album/75621062",
-  options
-)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    let results = data;
+window.onload = async () => {
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${params}`,
+    options
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let results = data;
 
-    console.log(results);
+      console.log(results);
 
-    for (let i = 0; i < results.tracks.data.length; i++) {
-      let song = results.tracks.data[i];
-      console.log(song);
+      for (let i = 0; i < results.tracks.data.length; i++) {
+        let song = results.tracks.data[i];
+        console.log(song);
 
-      let seconds = song.duration;
+        let seconds = song.duration;
 
-      let albumTr = document.createElement(`tr`);
-      albumTr.innerHTML = `<tr>
+        let albumTr = document.createElement(`tr`);
+        albumTr.innerHTML = `<tr>
             <th>${[i] * 1 + 1}</th>
             <td> <span class="table-title"> ${song.title} </span>
             </br>
@@ -40,18 +47,18 @@ fetch(
        
           </tr>`;
 
-      let container = document.getElementById(`table-body`);
+        let container = document.getElementById(`table-body`);
 
-      container.appendChild(albumTr);
-    }
-  })
+        container.appendChild(albumTr);
+      }
+    })
 
-  .catch((err) => console.error(err));
-
+    .catch((err) => console.error(err));
+};
 // Fetch and DOM Manipulation to dynamically fill the album page header with album cover image, album, album title, and misc
 
 fetch(
-  "https://striveschool-api.herokuapp.com/api/deezer/album/75621062",
+  `https://striveschool-api.herokuapp.com/api/deezer/album/${params}`,
   options
 )
   .then((response) => response.json())
