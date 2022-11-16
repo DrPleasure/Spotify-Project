@@ -7,6 +7,9 @@ const currentSong=document.querySelector('.Currentsong')
 const currentsongplaylist=document.querySelector('.currentsongplaylist')
 const search= new URLSearchParams(window.location.search)
 const artistId= search.get('artistId')
+const duration= new URLSearchParams(window.location.search)
+let durationId= duration.get('duration')
+console.log(durationId)
 const options = {
 	method: 'GET',
 	headers: {
@@ -15,26 +18,25 @@ const options = {
 	}
 };
 async function getMusic(){
- try {const response= await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`, options);
+ try {const response= await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=50`, options);
  const obj= await response.json()
- const resp= await fetch('')
-// let artistData=data.data
- console.log(obj)
-//  for(let obj of (artistData)){
-//     console.log(obj)
+ const objList=obj.data
+ console.log(objList)
+ for(let song of objList){
 let tr=document.createElement('tr')
 table.innerHTML+=`
                         <th scope="row"></th>
                         <td>
-                        <img src="${obj.picture_big}" width="50px" height='50px'>
+                        <img src="${song.album.cover_small
+                        }" width="50px" height='50px'>
                         </td>
-                        <td>${obj.name}</td>
-                        <td>${obj.nb_fan}</td>
-                        <td>${obj.duration}</td>
+                        <td>${song.title}</td>
+                        <td>${song.rank}</td>
+                        <td>${defineDuration(song.duration)}</td>
                   
 `
 table.append(tr)
-// }
+}
 
 }catch (error) {
   console.error(error)}
@@ -42,7 +44,7 @@ table.append(tr)
 
 
 async function getAlbum(){
-  const data= await fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/412',options);
+  const data= await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`,options);
   const dataFetch= await data.json()
   console.log(dataFetch)
 currentSong.innerHTML+=`
@@ -52,10 +54,29 @@ currentSong.innerHTML+=`
                 <i class="bi bi-patch-check-fill"></i>
                 Verified Artist
                 <h1>${dataFetch.name}</h1>                
-                <p>37,120,733 monthly listners</p>          
+                <p>${dataFetch.nb_fan} monthly listners</p>          
                  </div>`         
-
+                 artistpickplaylist.innerHTML=`
+ <img src="${dataFetch.picture_small}">
+ `
+ postedImg.innerHTML=`
+ <div class="postedImg">
+            <img src="${dataFetch.picture_small}">
+            Posted By ${dataFetch.name}
+            </div>
+ `
+ postedby.innerHTML=`
+ <h6>Best of ${dataFetch.name}</h6>
+            <p>Playlist</p>
+ `
 }
+const defineDuration = (t) => {
+  return Math.floor(t / 60) + ':' + ('0' + Math.floor(t % 60)).slice(-2)
+}
+const randomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
 window.onload= async()=>{
  const data= await getMusic()
  const dataFetch= await getAlbum()
