@@ -14,6 +14,8 @@ const goodMorning = document.getElementById("goodMorning"); // good morning div
 const seeAllBtnAlbum = document.getElementById("seeAllAlbum"); // seeAll for Album
 const seeAllBtnArtist = document.getElementById("seeAllArtist"); // seeAll for Artist
 
+const fixedImage = document.getElementById("fixedImage"); // image in the sticky div
+
 // reset the input value
 const resetInput = () => {
   const input = document.getElementById("inputSearch");
@@ -87,7 +89,7 @@ const seeAlbumValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}')">
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${cover_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -138,7 +140,7 @@ const seeArtistValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}')">
+                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}','${picture_big}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -154,7 +156,7 @@ const seeArtistValue = async () => {
 };
 
 // append clicked titles to the "sidebarTitles" element
-const appendTitles = (id, title) => {
+const appendTitles = (id, title, imageLink) => {
   let text = ``;
   const li = document.createElement("li");
   li.className = "sidebar-items sidebar-text";
@@ -165,6 +167,8 @@ const appendTitles = (id, title) => {
   console.log("local storage: ", localStorage.setItem(`${id}`, `${title}`));
   storage.push(localStorage);
   console.log({ storage });
+
+  fixedImage.src = `${imageLink}`;
 };
 
 //SEE ALL - toggle
