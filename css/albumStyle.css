@@ -237,6 +237,7 @@ div #card-play:hover {
 
 #more-by-artist a {
   text-decoration: none;
+  color: white;
 }
 
 #more-by-artist a:hover {
@@ -251,4 +252,17 @@ div #card-play:hover {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
+}
+
+#artist a {
+  color: white;
+  text-decoration: none;
+}
+
+.text-deco a {
+  color: white;
+}
+
+#opaque {
+  color: lightgrey;
 }

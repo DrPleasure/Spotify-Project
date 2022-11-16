@@ -40,8 +40,8 @@ window.onload = async () => {
         albumTr.innerHTML = `<tr>
             <th>${[i] * 1 + 1}</th>
             <td> <span class="table-title"> ${song.title} </span>
-            </br>
-            ${song.artist.name}
+            </br> <a style="color: white" href="homepage.html" <p>
+             ${song.artist.name} </p> </a>
             </td>
             <td> ${secondsConvert(seconds)} </td>
        
@@ -78,11 +78,15 @@ fetch(
               }"> </div>
               <div id="album-info" class="col-8  lineheight-low"><p style="font-size: 20px; font-weight: bold"; >ALBUM</p> </br>
                   <h1> ${data.title} </h1> </br>
-                      <div class="row  d-flex" id="album-data">
-                   <p id="artist"> <img src="${data.artist.picture}">  ${
+                       <div class="row  d-flex" id="album-data">
+                   <p id="artist"> <img src="${
+                     data.artist.picture
+                   }"> <a href="homepage.html"> ${
       data.artist.name
-    } · </p>  <p id=""> ${year} ·
-      </p>  <p> ${data.nb_tracks} songs, ${secondsToHms(seconds)}. </p>
+    } </a> · </p>  <p id=""> ${year} ·
+      </p>  <p> ${data.nb_tracks} songs, <span id="opaque"> ${secondsToHms(
+      seconds
+    )}. </span> </p>
                       </div>
               </div>
               
@@ -105,7 +109,7 @@ fetch(
     console.log(data);
 
     let anchorTag = document.createElement(`div`);
-    anchorTag.innerHTML = `  <div  class="row col-12 d-flex justify-content-between mt-2">
+    anchorTag.innerHTML = `  <div  class="row col-12 d-flex justify-content-between mt-2 text-deco">
     <a class="text-deco-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >   <h2 class="more-by" >More by ${data.artist.name} </h2> </a>
     <a  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <h4 class="more-by" style="opacity: 0.5">SEE DISCOGRAPHY</h4></a> 
   </div>  `;
