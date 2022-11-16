@@ -175,7 +175,7 @@ tr {
   margin-top: 50px;
   font-size: 12px;
   color: grey;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   padding-left: 20px;
 }
 
@@ -233,4 +233,16 @@ div #card-play:hover {
 
 .displayed {
   display: block;
+}
+
+#more-by-artist a {
+  text-decoration: none;
+}
+
+#more-by-artist a:hover {
+  border-bottom: 1px solid white;
+}
+
+.more-by {
+  margin-top: 50px;
 }

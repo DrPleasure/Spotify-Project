@@ -95,6 +95,28 @@ fetch(
 
   .catch((err) => console.error(err));
 
+// function to display artist name dynamically at the cards list
+fetch(
+  `https://striveschool-api.herokuapp.com/api/deezer/album/${params}`,
+  options
+)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+
+    let anchorTag = document.createElement(`div`);
+    anchorTag.innerHTML = `  <div  class="row col-12 d-flex justify-content-between mt-2">
+    <a class="text-deco-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >   <h2 class="more-by" >More by ${data.artist.name} </h2> </a>
+    <a  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <h4 class="more-by" style="opacity: 0.5">SEE DISCOGRAPHY</h4></a> 
+  </div>  `;
+
+    let container = document.getElementById(`record-info`);
+
+    container.appendChild(anchorTag);
+  });
+
+// <a class="text-deco-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >   <h2  >More by</h2> </a>
+
 // Function to toggle pause symbol onClick Play-button
 $(".fas").click(function () {
   $(".fas").toggleClass("fa-play fa-pause");
