@@ -1,6 +1,7 @@
 console.log("O, A, ...");
 
 const storage = [];
+const albumsArray = [];
 
 /*-----------------------------------
 DOM elements
@@ -8,8 +9,10 @@ DOM elements
 const search = document.getElementById("inputSearch"); // search input
 const reset = document.querySelector(".input-group-prepend"); // reset div
 const sidebarTitles = document.getElementById("sidebarList"); // sidebar title list
-const seeAllBtnAlbum = document.getElementById("seeAllAlbum");
-const seeAllBtnArtist = document.getElementById("seeAllArtist");
+const goodMorning = document.getElementById("goodMorning"); // good morning div
+
+const seeAllBtnAlbum = document.getElementById("seeAllAlbum"); // seeAll for Album
+const seeAllBtnArtist = document.getElementById("seeAllArtist"); // seeAll for Artist
 
 // reset the input value
 const resetInput = () => {
@@ -78,7 +81,7 @@ const seeAlbumValue = async () => {
   const songs = band.data;
   console.log({ songs });
   if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
-  songs.forEach(({ album: { id, cover_big, title, type } }, index) => {
+  songs.forEach(({ album: { id, cover_big, title, type, cover_small } }, index) => {
     console.log(id);
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
@@ -95,6 +98,11 @@ const seeAlbumValue = async () => {
                     </div>
                   </a>`;
     bandList.appendChild(column);
+    const obj = {
+      title: `${title}`,
+      image: `${cover_small}`,
+    };
+    albumsArray.push(obj);
   });
 };
 
@@ -129,7 +137,7 @@ const seeArtistValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./artistpage.html?artistId=${id}" class="albumLinks">
+                  <a href="./artistpage.html?artistId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -157,9 +165,8 @@ const appendTitles = (id, title) => {
   storage.push(localStorage);
   console.log({ storage });
 };
-// appendTitles("muahhhh");
 
-//SEE ALL toggle
+//SEE ALL - toggle
 const toggleSeeAllAlbum = () => {
   const div = document.getElementById("albums");
   div.classList.toggle("overflow-grid");
@@ -170,3 +177,20 @@ const toggleSeeAllArtist = () => {
 };
 seeAllBtnAlbum.addEventListener("click", toggleSeeAllAlbum);
 seeAllBtnArtist.addEventListener("click", toggleSeeAllArtist);
+
+// randomize Good morning
+const random = () => {
+  const rand = Math.floor(Math.random() * 15);
+  console.log({ rand });
+  return rand;
+};
+random();
+
+const seeRandomAlbums = () => {};
+
+// search.addEventListener("keyup", );
+
+/* <div class="col justify-content-start mb-3 grow">
+              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
+              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
+            </div> */
