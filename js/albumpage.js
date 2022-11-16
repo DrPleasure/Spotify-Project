@@ -66,7 +66,7 @@ fetch(
 
     let albumDiv = document.createElement(`div`);
     albumDiv.innerHTML = ` <div  class="row d-flex">
-              <div id="album-image" class="col-3"> <img class="img-fluid"  src="${
+              <div id="album-image" class="col-3"> <img id="cover-photo" class="img-fluid"  src="${
                 data.cover_medium
               }"> </div>
               <div id="album-info" class="col-8  lineheight-low"><p style="font-size: 20px; font-weight: bold"; >ALBUM</p> </br>

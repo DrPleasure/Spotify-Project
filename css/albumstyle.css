@@ -100,7 +100,7 @@ body {
 }
 
 #sidebar {
-  height: 200vh;
+  height: 300vh;
   background-color: #000000;
 }
 
@@ -108,10 +108,7 @@ body {
   background-color: #121212;
   width: 100%;
   padding: 0;
-}
-
-#album-content {
-  /* background-color: #913275; */
+  padding-top: 15px;
 }
 
 #profile-div {
@@ -177,4 +174,21 @@ tr {
 .left-arrow {
   height: 50px;
   width: 50px;
+}
+
+#cover-photo {
+  box-shadow: 0px 7px 26px #001908;
+}
+
+#record-info {
+  line-height: 0.3;
+  margin-top: 50px;
+  font-size: 12px;
+  color: grey;
+  margin-bottom: 50px;
+  padding-left: 20px;
+}
+
+#more-by-artist {
+  padding-left: 40px;
 }
