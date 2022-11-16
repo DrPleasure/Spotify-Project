@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(#300b05, black);
+  background-image: linear-gradient(#300b05 10%, black);
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
