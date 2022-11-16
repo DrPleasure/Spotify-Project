@@ -1,10 +1,15 @@
 console.log("O, A, ...");
 
+const storage = [];
+
 /*-----------------------------------
 DOM elements
 -----------------------------------*/
 const search = document.getElementById("inputSearch"); // search input
 const reset = document.querySelector(".input-group-prepend"); // reset div
+const sidebarTitles = document.getElementById("sidebarList"); // sidebar title list
+const seeAllBtnAlbum = document.getElementById("seeAllAlbum");
+const seeAllBtnArtist = document.getElementById("seeAllArtist");
 
 // reset the input value
 const resetInput = () => {
@@ -78,7 +83,7 @@ const seeAlbumValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./albumpage.html?albumId=${id}" class="albumLinks">
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${cover_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -138,3 +143,30 @@ const seeArtistValue = async () => {
     bandList.appendChild(column);
   });
 };
+
+// append clicked titles to the "sidebarTitles" element
+const appendTitles = (id, title) => {
+  let text = ``;
+  const li = document.createElement("li");
+  li.className = "sidebar-items sidebar-text";
+  li.innerText = `${title}`;
+  text = li.innerText;
+  sidebarTitles.appendChild(li);
+
+  console.log("local storage: ", localStorage.setItem(`${id}`, `${title}`));
+  storage.push(localStorage);
+  console.log({ storage });
+};
+// appendTitles("muahhhh");
+
+//SEE ALL toggle
+const toggleSeeAllAlbum = () => {
+  const div = document.getElementById("albums");
+  div.classList.toggle("overflow-grid");
+};
+const toggleSeeAllArtist = () => {
+  const div = document.getElementById("artist");
+  div.classList.toggle("overflow-grid");
+};
+seeAllBtnAlbum.addEventListener("click", toggleSeeAllAlbum);
+seeAllBtnArtist.addEventListener("click", toggleSeeAllArtist);

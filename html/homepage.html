@@ -58,6 +58,17 @@
               alt="white heart on purple background"
             /><span class="sidebar-text">Liked Songs</span>
           </div>
+
+          <!-- DIVIDER -->
+          <div class="translucidLine"></div>
+
+          <!-- SIDEBAR - LIST DIV -->
+          <ul id="sidebarList" class="sidebar-list">
+            <!-- <li class="sidebar-items sidebar-text">Library</li>
+            <li class="sidebar-items sidebar-text">Library</li>
+            <li class="sidebar-items sidebar-text">Library</li>
+            <li class="sidebar-items sidebar-text">Library</li> -->
+          </ul>
         </div>
 
         <div class="column col-10 padding-top">
@@ -68,7 +79,7 @@
               <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
             </div>
 
-            <!-- SEARCH -->
+            <!-- SEARCH BAR-->
             <div class="input-group customizeInput collapse" id="collapseExample">
               <input
                 type="text"
@@ -154,10 +165,11 @@
           <!-- RECENTLY PLAYED Section -->
           <div id="recentlyPlayed-div" class="mt-4">
             <h4 id="recentlyPlayedHeader">Albums</h4>
-            <span id="seeAll" class="grow">SEE ALL</span>
+            <span id="seeAllAlbum" class="grow">SEE ALL</span>
           </div>
 
-          <div class="row mt-4 row-cols-8 mx-n1" id="albums">
+          <div class="row mt-4 row-cols-8 mx-n1 overflow-grid" id="albums">
+            <!-- <div class="overflow-grid" id="albums"></div> -->
             <!-- 
             <div class="col px-1">
               <div class="card px-3 py-3 bg-recentlyPlayed grow">
@@ -179,10 +191,10 @@
               <span id="podcastsToTry">Podcasts we think you'll get hooked on</span>
             </div>
 
-            <span id="seeAll" class="grow">SEE ALL</span>
+            <span id="seeAllArtist" class="grow">SEE ALL</span>
           </div>
 
-          <div class="row mt-4 row-cols-8 mx-n1" id="artist">
+          <div class="row mt-4 row-cols-8 mx-n1 overflow-grid" id="artist">
             <!-- <div class="col px-1">
               <div class="card px-3 py-3 bg-recentlyPlayed grow">
                 <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />

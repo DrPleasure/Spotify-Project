@@ -1,13 +1,15 @@
 body {
-  background-image: linear-gradient(#300b05 10%, black);
+  background-image: linear-gradient(#300b05 5%, black);
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.85rem;
+  height: 100%;
 }
 
-/* .container-fluid {
-} */
+.container-fluid {
+  /* height: 100vh; */
+}
 
 /* -------------------------
   SIDEBAR 
@@ -35,6 +37,15 @@ body {
   font-weight: bold;
 }
 
+/* SIDEBAR - LIST DIV  */
+#sidebarList {
+  padding: 0;
+  margin: 0 0.75rem;
+}
+.sidebar-items {
+  list-style: none;
+  padding: 0.75rem 0;
+}
 /* -------------------------
   PROFILE SECTION 
   ---------------------------*/
@@ -47,7 +58,7 @@ body {
 
 #profile-div .bi {
   font-size: 0.85rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #profile button,
@@ -332,16 +343,34 @@ UTILITY CLASSES
 
 .albumLinks {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .albumLinks:hover {
-  color: wheat;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
 
 .search-anchor,
 .search-anchor:hover {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.translucidLine {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 1px;
+  margin: 1rem 0.75rem 0;
+}
+
+/* OVERFLOW */
+.overflow-grid {
+  /* white-space: nowrap; */
+  /* width: 100%; */
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.overflow-show {
+  flex-wrap: wrap;
 }
