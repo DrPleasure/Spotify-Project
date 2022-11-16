@@ -14,6 +14,8 @@ const goodMorning = document.getElementById("goodMorning"); // good morning div
 const seeAllBtnAlbum = document.getElementById("seeAllAlbum"); // seeAll for Album
 const seeAllBtnArtist = document.getElementById("seeAllArtist"); // seeAll for Artist
 
+const fixedImage = document.getElementById("fixedImage"); // image in the sticky div
+
 // reset the input value
 const resetInput = () => {
   const input = document.getElementById("inputSearch");
@@ -44,6 +46,7 @@ window.onload = async () => {
   try {
     search.addEventListener("keyup", seeAlbumValue);
     search.addEventListener("keyup", seeArtistValue);
+    search.addEventListener("keyup", seeRandomAlbums);
 
     // CONDITION TO MAKE SURE AN ARRAY IS PASSED <AND FETCHED>
   } catch (err) {
@@ -86,7 +89,7 @@ const seeAlbumValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}')">
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${cover_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -137,7 +140,7 @@ const seeArtistValue = async () => {
     const column = document.createElement("div");
     column.className = "col-lg-2 px-1";
     column.innerHTML = `
-                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}')">
+                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}','${picture_big}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -153,7 +156,7 @@ const seeArtistValue = async () => {
 };
 
 // append clicked titles to the "sidebarTitles" element
-const appendTitles = (id, title) => {
+const appendTitles = (id, title, imageLink) => {
   let text = ``;
   const li = document.createElement("li");
   li.className = "sidebar-items sidebar-text";
@@ -164,6 +167,8 @@ const appendTitles = (id, title) => {
   console.log("local storage: ", localStorage.setItem(`${id}`, `${title}`));
   storage.push(localStorage);
   console.log({ storage });
+
+  fixedImage.src = `${imageLink}`;
 };
 
 //SEE ALL - toggle
@@ -180,17 +185,55 @@ seeAllBtnArtist.addEventListener("click", toggleSeeAllArtist);
 
 // randomize Good morning
 const random = () => {
-  const rand = Math.floor(Math.random() * 15);
+  const rand = Math.floor(Math.random() * 7);
   console.log({ rand });
   return rand;
 };
 random();
 
-// const seeRandomAlbums = () => {};
+const seeRandomAlbums = async () => {
+  // const input = event.target.value;
+  const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=`;
+  let resp = ``;
+  //const songs = [];
+  const input = document.getElementById("inputSearch").value;
+  console.log(input);
+  const endpoint = `${input}`;
+  console.log({ endpoint });
+  resp = await fetch(`${API_URL}${endpoint}`, options);
+  console.log({ resp });
+  // EXITS THE EXECUTION IN ONE OF THESE TWO THROWINGS
+  if (resp.status === 404) throw new Error("resource not found");
+  if (!resp.ok) throw new Error("generic error, something wrong with the fetch");
+  // IF ERROR IS THROWN NOTHING HERE WILL BE RUNNING
+  const band = await resp.json();
 
-// search.addEventListener("keyup", );
+  console.log("console.log(band) has the following result: ", band);
 
-/* <div class="col justify-content-start mb-3 grow">
-              <img class="img-fluid img-goodMorning" src="/assets/spotify.png" alt="" />
-              <div class="mb-0 bg-goodMorning flex-align-center pl-2">Column text</div>
-            </div> */
+  const goodMorningList = document.getElementById("goodMorning");
+  goodMorningList.innerHTML = "";
+
+  const songs = band.data;
+  console.log({ songs });
+
+  const randomIndex = random();
+
+  const slicedArray = songs.slice(randomIndex, randomIndex + 10);
+
+  console.log({ slicedArray });
+  if (!Array.isArray(slicedArray)) throw new Error("You need to pass an array into the function");
+  slicedArray.forEach(({ album: { cover_small }, title_short }, index) => {
+    const container = document.createElement("div");
+    container.className = "col justify-content-start mb-3 grow";
+    container.innerHTML = `
+                            <img class="img-fluid img-goodMorning" src=${cover_small} alt="" />
+                            <div class="mb-0 bg-goodMorning flex-align-center pl-2">${title_short}</div>`;
+    goodMorningList.appendChild(container);
+    const obj = {
+      title: `${title_short}`,
+      image: `${cover_small}`,
+    };
+    albumsArray.push(obj);
+  });
+};
+// search.addEventListener("keyup", seeRandomAlbums);
