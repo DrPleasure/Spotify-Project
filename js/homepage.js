@@ -156,6 +156,9 @@ const seeArtistValue = async () => {
 };
 
 // append clicked titles to the "sidebarTitles" element
+// +
+// after each click the image in the sticky div is updated
+// with the relevant src
 const appendTitles = (id, title, imageLink) => {
   let text = ``;
   const li = document.createElement("li");
@@ -183,7 +186,8 @@ const toggleSeeAllArtist = () => {
 seeAllBtnAlbum.addEventListener("click", toggleSeeAllAlbum);
 seeAllBtnArtist.addEventListener("click", toggleSeeAllArtist);
 
-// randomize Good morning
+// GOOD MORNING section
+
 const random = () => {
   const rand = Math.floor(Math.random() * 7);
   console.log({ rand });
