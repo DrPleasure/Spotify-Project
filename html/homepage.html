@@ -31,9 +31,20 @@
           <div id="home" class="sidebar-align-left grow">
             <i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span>
           </div>
-          <div id="search" class="sidebar-align-left grow">
-            <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
-          </div>
+          <!-- Search - collapse -->
+          <a
+            class="search-anchor"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <div id="search" class="sidebar-align-left grow">
+              <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
+            </div>
+          </a>
+
           <div id="library" class="sidebar-align-left mb-4 grow">
             <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
           </div>
@@ -58,7 +69,7 @@
             </div>
 
             <!-- SEARCH -->
-            <div class="input-group customizeInput">
+            <div class="input-group customizeInput collapse" id="collapseExample">
               <input
                 type="text"
                 class="form-control"
@@ -142,12 +153,13 @@
 
           <!-- RECENTLY PLAYED Section -->
           <div id="recentlyPlayed-div" class="mt-4">
-            <h4 id="recentlyPlayedHeader">Recently Played</h4>
+            <h4 id="recentlyPlayedHeader">Albums</h4>
             <span id="seeAll" class="grow">SEE ALL</span>
           </div>
 
-          <div class="row mt-4 row-cols-8 mx-n1" id="recentlyPlayed">
-            <!-- <div class="col px-1">
+          <div class="row mt-4 row-cols-8 mx-n1" id="albums">
+            <!-- 
+            <div class="col px-1">
               <div class="card px-3 py-3 bg-recentlyPlayed grow">
                 <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
                 <div class="card-body px-0">
@@ -157,97 +169,20 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/spotify.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col px-1">
-              <div class="card px-3 py-3 bg-recentlyPlayed grow">
-                <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />
-                <div class="card-body px-0">
-                  <h5 class="card-title line-clamp-1">Card title</h5>
-                  <p class="card-text line-clamp-2">
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div> -->
+            </div>-->
           </div>
 
           <!-- SHOWS TO TRY Section -->
           <div id="recentlyPlayed-div" class="mt-4">
             <div>
-              <h4 id="recentlyPlayedHeader">Recently Played</h4>
+              <h4 id="recentlyPlayedHeader">Artist</h4>
               <span id="podcastsToTry">Podcasts we think you'll get hooked on</span>
             </div>
 
             <span id="seeAll" class="grow">SEE ALL</span>
           </div>
 
-          <div class="row mt-4 row-cols-8 mx-n1" id="recentlyPlayed">
+          <div class="row mt-4 row-cols-8 mx-n1" id="artist">
             <div class="col px-1">
               <div class="card px-3 py-3 bg-recentlyPlayed grow">
                 <img src="/assets/purple-heart.png" class="card-img-top" alt="..." />

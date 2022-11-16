@@ -243,7 +243,6 @@ RIGHT FIXED
 /* -------------------------
 UTILITY CLASSES
 ---------------------------*/
-/* homepage/main-content */
 
 .bi {
   font-size: 1.5rem;
@@ -329,4 +328,20 @@ UTILITY CLASSES
 
 .faded {
   color: rgba(255, 255, 255, 0.4);
+}
+
+.albumLinks {
+  text-decoration: none;
+  color: white;
+}
+
+.albumLinks:hover {
+  color: wheat;
+  text-decoration: none;
+}
+
+.search-anchor,
+.search-anchor:hover {
+  text-decoration: none;
+  color: white;
 }

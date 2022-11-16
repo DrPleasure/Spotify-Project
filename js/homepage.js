@@ -67,17 +67,19 @@ window.onload = async () => {
 
       console.log("console.log(band) has the following result: ", band);
 
-      const bandList = document.getElementById("recentlyPlayed");
+      const bandList = document.getElementById("albums");
       bandList.innerHTML = "";
 
       const songs = band.data;
       console.log({ songs });
       if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
-      songs.forEach(({ artist: { picture_medium }, id, title_short, title_version }) => {
+      songs.forEach(({ artist: { picture_medium }, id, title_short, title_version, album }, index) => {
+        console.log(album.id);
         const column = document.createElement("div");
-        column.className = "col px-1";
+        column.className = "col-lg-2 px-1";
         column.innerHTML = `
-                        <div class="card px-3 py-3 bg-recentlyPlayed grow" id=${id}>
+                      <a href="./albumpage.html?albumId=${id}" class="albumLinks">
+                        <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                             <img src=${picture_medium} class="card-img-top" alt="..." />
                             <div class="card-body px-0">
                                 <h5 class="card-title line-clamp-1">${title_short}</h5>
@@ -85,7 +87,8 @@ window.onload = async () => {
                                 ${title_version}
                                 </p>
                             </div>
-                        </div>`;
+                        </div>
+                      </a>`;
         bandList.appendChild(column);
       });
     };
