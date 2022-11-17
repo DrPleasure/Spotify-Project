@@ -83,9 +83,9 @@
             </div> -->
         </div>
         <div class="currentsongplaylist">
-        <div class="followArtist">
-            <i class="bi bi-pause-circle-fill"></i>
-            <div class="button">Follow</div>
+        <div class="followArtist ">
+          <i class="bi bi-play-circle-fill"></i>
+            <button type="button" data-toggle="modal" data-target="#exampleModal" id="follow-btn">Follow</button>
             <span>...</span>
         </div>
         <div class="currentsongplaying">
@@ -131,7 +131,7 @@
                   </tr>
                 </tbody> -->
               </table>
-              <a href="#">SEE MORE</a>
+              <a id='moreMusic' href="#" class="p-2">SEE MORE</a>
         </div>
         </div>
         <div class="Artistpick">
@@ -153,19 +153,35 @@
         </div>
         </div>
         </div>
+        <div class="discographysection d-flex justify-content-between p-4">
+          <div class="discography">
+            <h3>Discography</h3>
+          </div>
+          <a id='seeall' href="#" class="p-2">SEE ALL</a>
+        </div>
+        <section class="buttons mt-3 p-4">
+          <button type="button" class="btn btn-outline-success">Popular releases</button>
+          <button id="albums" type="button" class="btn btn-outline-success">Albums</button>
+          <button type="button" class="btn btn-outline-success">Singles and EPs</button>
+          <button type="button" class="btn btn-outline-success">Compilations</button>
+      </section>
+      <div id='cardrow'class="row mt-4 mb-4 p-2">
+        
+      </div>
         </div>
         </div>
       </div>
-      <div id="fixedContainer">
-        <!-- LEFT CONTAINER -->
-        <div id="fixed-left">
-          <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" />
-          <div class="title-left mr-2">
-            <p class="bold">Another One Bites The Dust - Remastered 2011</p>
-            <p class="faded">Queen</p>
-          </div>
-          <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
+      <!-- FIXED ROW -->
+    <div id="fixedContainer">
+      <!-- LEFT CONTAINER -->
+      <div id="fixed-left">
+        <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" id="fixedImage" />
+        <div class="title-left mr-2">
+          <p class="bold">Another One Bites The Dust - Remastered 2011</p>
+          <p class="faded">Queen</p>
         </div>
+        <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
+      </div>
   
         <!-- MIDDLE CONTAINER -->
         <div id="fixed-middle">
