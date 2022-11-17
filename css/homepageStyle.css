@@ -160,12 +160,12 @@ body {
 FIXED ROW
 ---------------------------*/
 #fixedContainer {
-  padding: 0.5rem;
+  padding: 1.5rem 1rem 1rem 1.6rem;
   background-color: black;
-  margin: 0 15px;
-  display: flex;
+  /* margin: 0 15px; */
+  /* display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: center; */
   position: sticky;
   bottom: 0;
 }
@@ -177,7 +177,7 @@ LEFT FIXED
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-right: 10%;
+  /* margin-right: 10%; */
 }
 
 #fixed-left img {
@@ -253,7 +253,7 @@ RIGHT FIXED
 -------------*/
 #fixed-right {
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
 }
 
@@ -268,6 +268,20 @@ RIGHT FIXED
   height: 3px;
   /* border: 2px solid rgba(255, 255, 255, 0.7); */
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.align-fixed-right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.order-one {
+  order: 1;
+}
+
+.order-two {
+  order: 2;
 }
 
 /* -------------------------
