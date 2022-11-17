@@ -87,20 +87,38 @@ body {
   width: 50%;
 }
 
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .input-group-prepend {
+  height: 3rem;
+  align-self: center;
+} */
+
 #resetInput {
   background-color: black;
+  border: #000000 1px solid;
+  height: 2.5rem;
+}
+
+.bi-archive-fill {
+  font-size: 3rem;
+  height: 2rem;
 }
 
 /* -------------------------
   UTILITY CLASSES
   ---------------------------*/
 
-GOOD MORNING Section #goodMorning p {
+#goodMorning p {
   padding: 0;
 }
 
 .img-goodMorning {
   width: 4rem;
+  height: 4rem;
   object-fit: cover;
   border-radius: 3px;
 }
@@ -109,6 +127,7 @@ GOOD MORNING Section #goodMorning p {
   width: 20rem;
   height: 4rem;
   background-color: rgba(255, 255, 255, 0.1);
+  padding-right: 0.25rem;
 }
 
 #recentlyPlayed-div {
@@ -141,12 +160,12 @@ GOOD MORNING Section #goodMorning p {
 FIXED ROW
 ---------------------------*/
 #fixedContainer {
-  padding: 0.5rem;
+  padding: 1.5rem 1rem 1rem 1.6rem;
   background-color: black;
-  margin: 0 15px;
-  display: flex;
+  /* margin: 0 15px; */
+  /* display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: center; */
   position: sticky;
   bottom: 0;
 }
@@ -158,7 +177,7 @@ LEFT FIXED
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-right: 10%;
+  /* margin-right: 10%; */
 }
 
 #fixed-left img {
@@ -234,7 +253,7 @@ RIGHT FIXED
 -------------*/
 #fixed-right {
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
 }
 
@@ -249,6 +268,20 @@ RIGHT FIXED
   height: 3px;
   /* border: 2px solid rgba(255, 255, 255, 0.7); */
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.align-fixed-right {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.order-one {
+  order: 1;
+}
+
+.order-two {
+  order: 2;
 }
 
 /* -------------------------
@@ -373,4 +406,11 @@ UTILITY CLASSES
 
 .overflow-show {
   flex-wrap: wrap;
+}
+
+/* 
+PROGRESS BAR
+ */
+.progress-width {
+  width: 350px;
 }

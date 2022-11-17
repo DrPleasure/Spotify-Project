@@ -15,6 +15,8 @@ const seeAllBtnAlbum = document.getElementById("seeAllAlbum"); // seeAll for Alb
 const seeAllBtnArtist = document.getElementById("seeAllArtist"); // seeAll for Artist
 
 const fixedImage = document.getElementById("fixedImage"); // image in the sticky div
+const fixedTitle = document.getElementById("fixedTitle"); // first p in the sticky div
+const fixedBand = document.getElementById("fixedBand"); // second p in the sticky div
 
 // reset the input value
 const resetInput = () => {
@@ -84,12 +86,12 @@ const seeAlbumValue = async () => {
   const songs = band.data;
   console.log({ songs });
   if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
-  songs.forEach(({ album: { id, cover_big, title, type, cover_small } }, index) => {
+  songs.forEach(({ album: { id, cover_big, title, type, cover_small }, duration }, index) => {
     console.log(id);
     const column = document.createElement("div");
-    column.className = "col-lg-2 px-1";
+    column.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1";
     column.innerHTML = `
-                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}')">
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}', '${duration}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${cover_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -134,13 +136,14 @@ const seeArtistValue = async () => {
 
   const songs = band.data;
   console.log({ songs });
-  if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
+
+  if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function"); // we make sure that the parameter of Array.isArray is always an array
   songs.forEach(({ artist: { id, picture_big, link, name }, duration }, index) => {
     console.log(id);
     const column = document.createElement("div");
-    column.className = "col-lg-2 px-1";
+    column.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1";
     column.innerHTML = `
-                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}','${picture_big}')">
+                  <a href="./artistpage.html?artistId=${id}&duration=${duration}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}','${picture_big}', '${duration}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
                         <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
@@ -156,7 +159,10 @@ const seeArtistValue = async () => {
 };
 
 // append clicked titles to the "sidebarTitles" element
-const appendTitles = (id, title, imageLink) => {
+// +
+// after each click the image in the sticky div is updated
+// with the relevant src
+const appendTitles = (id, title, imageLink, duration) => {
   let text = ``;
   const li = document.createElement("li");
   li.className = "sidebar-items sidebar-text";
@@ -169,6 +175,8 @@ const appendTitles = (id, title, imageLink) => {
   console.log({ storage });
 
   fixedImage.src = `${imageLink}`;
+  fixedTitle.innerText = `${title}`;
+  fixedBand.innerText = `${duration} min`;
 };
 
 //SEE ALL - toggle
@@ -183,7 +191,8 @@ const toggleSeeAllArtist = () => {
 seeAllBtnAlbum.addEventListener("click", toggleSeeAllAlbum);
 seeAllBtnArtist.addEventListener("click", toggleSeeAllArtist);
 
-// randomize Good morning
+// GOOD MORNING section
+
 const random = () => {
   const rand = Math.floor(Math.random() * 7);
   console.log({ rand });
@@ -218,16 +227,16 @@ const seeRandomAlbums = async () => {
 
   const randomIndex = random();
 
-  const slicedArray = songs.slice(randomIndex, randomIndex + 10);
+  const slicedArray = songs.slice(randomIndex, randomIndex + 12);
 
   console.log({ slicedArray });
   if (!Array.isArray(slicedArray)) throw new Error("You need to pass an array into the function");
-  slicedArray.forEach(({ album: { cover_small }, title_short }, index) => {
+  slicedArray.forEach(({ album: { id, cover_small }, title_short, duration }, index) => {
     const container = document.createElement("div");
-    container.className = "col justify-content-start mb-3 grow";
+    container.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 justify-content-start mb-3 grow";
     container.innerHTML = `
-                            <img class="img-fluid img-goodMorning" src=${cover_small} alt="" />
-                            <div class="mb-0 bg-goodMorning flex-align-center pl-2">${title_short}</div>`;
+                            <img class="img-fluid img-goodMorning" src=${cover_small} alt=""  onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')"/>
+                            <div class="mb-0 bg-goodMorning flex-align-center pl-2" onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')">${title_short}</div>`;
     goodMorningList.appendChild(container);
     const obj = {
       title: `${title_short}`,
