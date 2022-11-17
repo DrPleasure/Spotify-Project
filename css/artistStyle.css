@@ -123,24 +123,37 @@ background-color: #000000;
   }
   .followArtist{
     display: flex;
-    margin-left: 10px;
+    margin-left: 20px;
     gap:15px;
   }
   .followArtist span{
-    padding-top: 10px;
+    font-size: 3rem;
   }
 
   .followArtist .bi{
     color: green;
-    font-size: 2.7rem;
+    font-size: 4rem;
     
     
   }
-  .followArtist button{
-    width: 100px;
-    height:30px;
+  #follow-btn{
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    font-weight: bold;
     align-self: center;
-  }
+}
+#follow-btn:hover{
+color: white;
+border: 1px solid white;
+}
+#seeall{
+  text-decoration: none;
+  color: white;
+}
   .Currentsong{
     position: relative;
     display: flex;
@@ -148,13 +161,13 @@ background-color: #000000;
   .monthlylistners{
     position: absolute;
    align-self: center;
-   margin-inline: 10px;
-   margin-top: 155px;
+   margin-left: 30px;
+   margin-top: 100px;
    font-size: 14px;
   }
   .monthlylistners h1{
-    font-size: 3rem;
-    text-transform: capitalize;
+    font-size: 5rem;
+   font-weight: bold;
   }
   .monthlylistners .bi{
     color: #2778D8;
@@ -163,7 +176,7 @@ background-color: #000000;
   .currentsongplaying{
     display: flex;
     justify-content: space-between;
-    margin-inline: 10px;
+    margin-inline: 20px;
   }
   .button{
     align-self: center;
@@ -199,13 +212,17 @@ background-color: #000000;
   }
   .artpickby{
     display: flex;
-    /* gap:5px */
+    gap:5px
 
   }
-  td:hover{
+  tbody:hover{
     color: green;
     cursor: pointer;
-    transform: scale(1.1)
+    background-color: white;
+
+  }
+  th, td {
+    padding: 100px;
   }
   .table{
     color: white;
@@ -326,3 +343,25 @@ background-color: #000000;
     /* border: 2px solid rgba(255, 255, 255, 0.7); */
     background-color: rgba(255, 255, 255, 0.7);
   }
+  .btn{
+   border-radius: 30px;
+   color: white;
+  }
+  #cardinfo{
+    color:white;
+    background: #282828;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  #cardinfo img{
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  #cardinfo:hover{
+    box-shadow: 5px 5px 8px #282828;
+    transform: scale(1.1);
+  }
+ 
