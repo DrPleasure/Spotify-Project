@@ -87,20 +87,38 @@ body {
   width: 50%;
 }
 
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .input-group-prepend {
+  height: 3rem;
+  align-self: center;
+} */
+
 #resetInput {
   background-color: black;
+  border: #000000 1px solid;
+  height: 2.5rem;
+}
+
+.bi-archive-fill {
+  font-size: 3rem;
+  height: 2rem;
 }
 
 /* -------------------------
   UTILITY CLASSES
   ---------------------------*/
 
-GOOD MORNING Section #goodMorning p {
+#goodMorning p {
   padding: 0;
 }
 
 .img-goodMorning {
   width: 4rem;
+  height: 4rem;
   object-fit: cover;
   border-radius: 3px;
 }
@@ -109,6 +127,7 @@ GOOD MORNING Section #goodMorning p {
   width: 20rem;
   height: 4rem;
   background-color: rgba(255, 255, 255, 0.1);
+  padding-right: 0.25rem;
 }
 
 #recentlyPlayed-div {

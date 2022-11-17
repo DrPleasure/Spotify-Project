@@ -24,7 +24,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- SIDEBAR -->
-        <div class="column col-2 padding-top" id="sidebar">
+        <div class="column d-none-sm col-md-3 col-lg-2 padding-top" id="sidebar">
           <div id="logo" class="flex-align-center mb-4 grow">
             <img class="img-fluid" src="/assets/Spotify-Logo-White.jpeg" alt="spotify logo" />
           </div>
@@ -71,10 +71,10 @@
           </ul>
         </div>
 
-        <div class="column col-10 padding-top">
+        <div class="column col-sm-12 col-md-9 col-lg-10 padding-top">
           <!-- PROFILE SECTION -->
           <div id="profile-div" class="mb-4">
-            <div class="arrow-div">
+            <div class="arrow-div d-none-sm">
               <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
               <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
             </div>
@@ -84,7 +84,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="search band"
+                placeholder="search album / artist / band"
                 aria-label="search"
                 aria-describedby="searchInput"
                 id="inputSearch"
@@ -93,7 +93,9 @@
                 <span class="input-group-text" id="searchInput"><i class="bi bi-binoculars-fill"></i></span>
               </div> -->
               <div class="input-group-prepend">
-                <span class="input-group-text" id="resetInput"><i class="bi bi-x-octagon-fill"></i></span>
+                <button type="button" class="btn btn-dark grow" id="resetInput">
+                  <i class="bi bi-archive-fill"></i>
+                </button>
               </div>
             </div>
 
@@ -181,8 +183,8 @@
       <div id="fixed-left">
         <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" id="fixedImage" />
         <div class="title-left mr-2">
-          <p class="bold">Another One Bites The Dust - Remastered 2011</p>
-          <p class="faded">Queen</p>
+          <p class="bold" id="fixedTitle">Choose an artist or album</p>
+          <p class="faded" id="fixedBand">Breathe the music!</p>
         </div>
         <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
       </div>
