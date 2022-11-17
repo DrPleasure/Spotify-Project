@@ -407,3 +407,10 @@ UTILITY CLASSES
 .overflow-show {
   flex-wrap: wrap;
 }
+
+/* 
+PROGRESS BAR
+ */
+.progress-width {
+  width: 350px;
+}

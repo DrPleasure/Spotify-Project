@@ -136,7 +136,8 @@ const seeArtistValue = async () => {
 
   const songs = band.data;
   console.log({ songs });
-  if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function");
+
+  if (!Array.isArray(songs)) throw new Error("You need to pass an array into the function"); // we make sure that the parameter of Array.isArray is always an array
   songs.forEach(({ artist: { id, picture_big, link, name }, duration }, index) => {
     console.log(id);
     const column = document.createElement("div");
@@ -230,12 +231,12 @@ const seeRandomAlbums = async () => {
 
   console.log({ slicedArray });
   if (!Array.isArray(slicedArray)) throw new Error("You need to pass an array into the function");
-  slicedArray.forEach(({ album: { cover_small }, title_short }, index) => {
+  slicedArray.forEach(({ album: { id, cover_small }, title_short, duration }, index) => {
     const container = document.createElement("div");
     container.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 justify-content-start mb-3 grow";
     container.innerHTML = `
-                            <img class="img-fluid img-goodMorning" src=${cover_small} alt="" />
-                            <div class="mb-0 bg-goodMorning flex-align-center pl-2">${title_short}</div>`;
+                            <img class="img-fluid img-goodMorning" src=${cover_small} alt=""  onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')"/>
+                            <div class="mb-0 bg-goodMorning flex-align-center pl-2" onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')">${title_short}</div>`;
     goodMorningList.appendChild(container);
     const obj = {
       title: `${title_short}`,
