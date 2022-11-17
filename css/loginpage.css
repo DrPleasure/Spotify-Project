@@ -1,0 +1,16 @@
+#top-bar {
+  background-color: rgb(36, 35, 35);
+  height: 5vh;
+  width: 100%;
+  margin: 0;
+}
+
+#logo {
+  height: 10vh;
+}
+
+#logo img {
+  height: 8vh;
+  margin-inline: auto;
+  margin-top: 20px;
+}
