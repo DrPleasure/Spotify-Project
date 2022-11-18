@@ -22,9 +22,9 @@
   font-size: 22px;
 }
 
-i.bi {
+/* i.bi {
   font-size: 40px;
-}
+} */
 
 i.bi.bi-clock {
   font-size: 20px;
@@ -82,7 +82,7 @@ body {
 
 #table-div {
   background: linear-gradient(#421337, #22101f);
-  margin-top: -48px;
+  margin-top: 50px;
 }
 
 #more {
@@ -269,4 +269,12 @@ div #card-play:hover {
 
 #home {
   color: white;
+}
+
+#album-content {
+  margin-bottom: -70px;
+}
+
+.bi-search {
+  font-size: 1.5rem;
 }

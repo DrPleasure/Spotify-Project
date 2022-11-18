@@ -30,13 +30,13 @@
       <!-- Sidebar and content to the right in row -->
       <div class="row d-flex col-12 p-0 m-0">
         <!-- Sidebar div -->
-        <div class="column col-2 padding-top" id="sidebar">
-          <a href="homepage.html" > <div id="logo" class="flex-align-center mb-4 grow">
+        <div class="column12 col-md-3 col-lg-2 padding-top" id="sidebar">
+          <div id="logo" class="flex-align-center mb-4 grow">
             <img class="img-fluid" src="/assets/Spotify-Logo-White.jpeg" alt="spotify logo" />
-          </div> </a>
-         <a href="homepage.html" > <div id="home" class="sidebar-align-left grow">
+          </div>
+          <div id="home" class="sidebar-align-left grow d-none d-md-block">
             <i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span>
-          </div> </a>
+          </div>
           <!-- Search - collapse -->
           <a
             class="search-anchor"
@@ -46,18 +46,18 @@
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            <div id="search" class="sidebar-align-left grow">
-              <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
+            <div id="search" class="sidebar-align-left grow mb-3">
+              <i class="bi-search mr-3"></i><span class="sidebar-text">Search</span>
             </div>
           </a>
 
-          <div id="library" class="sidebar-align-left mb-4 grow">
+          <div id="library" class="sidebar-align-left mb-4 grow d-none d-md-block">
             <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
           </div>
-          <div id="library" class="mb-2 sidebar-align-left grow">
+          <div id="playlist" class="mb-2 sidebar-align-left grow d-none d-md-block">
             <i class="bi bi-plus-square mr-3"></i><span class="sidebar-text">Create Playlist</span>
           </div>
-          <div id="library" class="sidebar-align-left grow">
+          <div id="likedSongs" class="sidebar-align-left grow d-none d-md-block">
             <img
               class="img-fluid img-small mr-3"
               src="/assets/purple-heart.png"
@@ -66,10 +66,10 @@
           </div>
 
           <!-- DIVIDER -->
-          <div class="translucidLine"></div>
+          <div class="translucidLine d-none d-md-block"></div>
 
           <!-- SIDEBAR - LIST DIV -->
-          <ul id="sidebarList" class="sidebar-list">
+          <ul id="sidebarList" class="sidebar-list d-none d-md-block">
             <!-- <li class="sidebar-items sidebar-text">Library</li>
             <li class="sidebar-items sidebar-text">Library</li>
             <li class="sidebar-items sidebar-text">Library</li>
@@ -80,44 +80,53 @@
         <div class="col-10" style="padding: 0">
           <!-- PROFILE DIV -->
           <div id="jumbotron" class="col-12" style="padding: 0">
-            <div id="profile-div" class="sticky col-12">
-              <div class="arrow-div">
-                <div class="left-arrow round mr-2">
-                  <i class="bi bi-chevron-left"></i>
-                </div>
-                <div class="right-arrow round">
-                  <i class="bi bi-chevron-right"></i>
-                </div>
-              </div>
+            <!-- PROFILE SECTION -->
+          <div id="profile-div" class="mb-4">
+            <!-- <div class="arrow-div d-none d-md-block"> -->
+            <div class="d-flex">
+              <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
+              <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
+            </div>
 
-              <div class="btn-group" id="profile">
-                <button
-                  type="button"
-                  class="btn btn-secondary dropdown-toggle transparent"
-                  data-toggle="dropdown"
-                  data-display="static"
-                  aria-expanded="false"
-                >
-                  <i class="bi bi-person-circle mr-2"></i>SpotifyProfile
+            <!-- SEARCH BAR-->
+            <div class="input-group customizeInput collapse" id="collapseExample">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="search album / artist / band"
+                aria-label="search"
+                aria-describedby="searchInput"
+                id="inputSearch"
+              />
+              <!-- <div class="input-group-prepend">
+                <span class="input-group-text" id="searchInput"><i class="bi bi-binoculars-fill"></i></span>
+              </div> -->
+              <div class="input-group-prepend">
+                <button type="button" class="btn btn-dark grow" id="resetInput">
+                  <i class="bi bi-archive-fill"></i>
                 </button>
-                <div
-                  class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3"
-                >
-                  <button class="dropdown-item" type="button">Action</button>
-                  <hr />
-                  <button class="dropdown-item" type="button">
-                    Another action
-                  </button>
-                  <hr />
-                  <button class="dropdown-item" type="button">
-                    Something else here
-                  </button> <hr />
-              <a href="homepage.html"> <span id="linker"> <button class="dropdown-item">
-                   Login
-                </button> </span> </a>
-                </div>
               </div>
             </div>
+
+            <div class="btn-group" id="profile">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle transparent"
+                data-toggle="dropdown"
+                data-display="static"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-circle mr-2"></i><span class="truncate">SpotifyProfile and asdf</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3 dropdown-bg">
+                <a href="./profile.html" target="”_blank”" class="color-items grow styled-items" type="button"
+                  >Log in</a
+                >
+                <!-- <hr /> -->
+                <!-- <button class="dropdown-item color-items" type="button">Backoffice</button> -->
+              </div>
+            </div>
+          </div>
             <!-- ALBUM CONTENT DIV -->
             <div id="album-content" class="col-12" style="height: 45vh">
               <div id="album-header" class="container-col-12"></div>
@@ -237,45 +246,61 @@
       </div>
     </div>
 
-      <div id="fixedContainer">
-        <!-- LEFT CONTAINER -->
-        <div id="fixed-left">
-          <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" />
-          <div class="title-left mr-2">
-            <p class="bold">Another One Bites The Dust - Remastered 2011</p>
-            <p class="faded">Queen</p>
-          </div>
-          <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
-        </div>
-  
-        <!-- MIDDLE CONTAINER -->
-        <div id="fixed-middle">
-          <div id="middle-top">
-            <div class="shuffle"><i class="bi bi-shuffle faded mr-4"></i></div>
-            <div class="skip-start"><i class="bi bi-skip-start faded mr-4"></i></div>
-            <div class="play"><i class="bi bi-play-fill faded mr-4 round-white text-dark"></i></div>
-            <div class="skip-end"><i class="bi bi-skip-end faded mr-4"></i></div>
-            <div class="repeat"><i class="bi bi-repeat faded mr-4"></i></div>
-          </div>
-          <div id="middle-bottom">
-            <div class="startTime mr-2 faded">0:12</div>
-            <div id="totalAndProgress">
-              <div class="progress"></div>
-              <div class="total"></div>
+    <div id="fixedContainer" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-lg-3 order-sm-2 order-lg-0">
+          <div id="fixed-left">
+            <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" id="fixedImage" />
+            <div class="title-left mr-4">
+              <p class="bold" id="fixedTitle">Choose an artist or album</p>
+              <p class="faded" id="fixedBand">Breathe the music!</p>
             </div>
-            <div class="endTime ml-2 faded">3:34</div>
+            <div class="icons-left"><i class="bi bi-heart mr-2 grow"></i><i class="bi bi-pip grow"></i></div>
           </div>
         </div>
-  
-        <!-- RIGHT CONTAINER -->
-        <div id="fixed-right">
-          <div class="icons-right">
-            <i class="bi bi-blockquote-right mr-2"></i><i class="bi bi-pc-display mr-2"></i
-            ><i class="bi bi-volume-up mr-2"></i>
+        <div class="col12 col-lg-6 mb-sm-4 order-sm-1 order-lg-1">
+          <div id="fixed-middle">
+            <div id="middle-top">
+              <div class="shuffle"><i class="bi bi-shuffle faded mr-4"></i></div>
+              <div class="skip-start"><i class="bi bi-skip-start faded mr-4"></i></div>
+              <div class="play"><i class="bi bi-play-fill faded mr-4 round-white text-dark"></i></div>
+              <div class="skip-end"><i class="bi bi-skip-end faded mr-4"></i></div>
+              <div class="repeat"><i class="bi bi-repeat faded mr-4"></i></div>
+            </div>
+            <div id="middle-bottom">
+              <div class="startTime mr-2 faded">0:12</div>
+              <div id="totalAndProgress">
+                <div class="progress"></div>
+                <div class="total"></div>
+              </div>
+              <!-- <div class="progress">
+                <div
+                  class="progress-bar progress-width"
+                  role="progressbar"
+                  style="width: 55%"
+                  aria-valuenow="55"
+                  aria-valuemin="0"
+                  aria-valuemax="300"
+                >
+                  55%
+                </div>
+              </div> -->
+
+              <div class="endTime ml-2 faded">3:34</div>
+            </div>
           </div>
-          <div class="volume"></div>
+        </div>
+        <div class="col-sm-6 col-lg-3 align-fixed-right order-sm-2 order-lg-2">
+          <div id="fixed-right">
+            <div class="icons-right">
+              <i class="bi bi-blockquote-right mr-2"></i><i class="bi bi-pc-display mr-2"></i
+              ><i class="bi bi-volume-up mr-2"></i>
+            </div>
+            <div class="volume"></div>
+          </div>
         </div>
       </div>
+    </div>
 
       <!-- RIGHT CONTAINER -->
       <div id="fixed-right">
