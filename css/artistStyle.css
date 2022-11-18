@@ -34,6 +34,10 @@ background-color: #000000;
     text-decoration: none;
     color: white;
   }
+  #home a{
+    text-decoration: none;
+    color: white;
+  }
   /* -------------------------
   PROFILE SECTION 
   ---------------------------*/
@@ -355,6 +359,9 @@ RIGHT FIXED
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.4);
 }
+.row{
+  width: 100%;
+}
 
 #fixed-right .volume {
   display: inline-block;
@@ -369,7 +376,9 @@ RIGHT FIXED
   align-items: center;
   justify-content: end;
 }
-
+.icons-left{
+  display: flex;
+}
 .order-one {
   order: 1;
 }
