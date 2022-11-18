@@ -114,18 +114,18 @@ const onWindowLoad = async () => {
   console.log({ artistSongs });
 
   if (!Array.isArray(artistSongs)) throw new Error("You need to pass an array into the function");
-  artistSongs.forEach(({ album: { id, cover_big, title, type, cover_small }, duration }, index) => {
+  artistSongs.forEach(({ artist: { id, picture_big, name }, duration }, index) => {
     console.log(id);
     const column = document.createElement("div");
     column.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1";
     column.innerHTML = `
-                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}', '${duration}')">
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${name}','${picture_big}', '${duration}')">
                     <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
-                        <img src=${cover_big} class="card-img-top" alt="..." />
+                        <img src=${picture_big} class="card-img-top" alt="..." />
                         <div class="card-body px-0">
-                            <h5 class="card-title line-clamp-1">${title}</h5>
+                            <h5 class="card-title line-clamp-1">${name}</h5>
                             <p class="card-text line-clamp-2">
-                            ${type}
+                            
                             </p>
                         </div>
                     </div>
@@ -229,7 +229,7 @@ const seeArtistValue = async () => {
                         <div class="card-body px-0">
                             <h5 class="card-title line-clamp-1">${name}</h5>
                             <p class="card-text line-clamp-2">
-                            ${link}
+                            ${duration} min
                             </p>
                         </div>
                     </div>
