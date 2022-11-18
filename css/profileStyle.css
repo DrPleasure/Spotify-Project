@@ -41,3 +41,37 @@ nav {
   /* display: inline-block; */
   /* z-index: 1; */
 }
+
+#lockAndInfo {
+  display: flex;
+  justify-content: end;
+}
+
+.lock {
+  width: 25px;
+  object-fit: cover;
+  transform: translateX(-25%) translateY(-175%);
+}
+
+.faded-text {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#checkboxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.firstCheck {
+  height: 1rem;
+  width: 1rem;
+}
+
+.checkBtn {
+  width: 10rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
