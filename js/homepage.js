@@ -46,6 +46,7 @@ window.onload = async () => {
   // const songs = [];
 
   try {
+    onWindowLoad();
     search.addEventListener("keyup", seeAlbumValue);
     search.addEventListener("keyup", seeArtistValue);
     search.addEventListener("keyup", seeRandomAlbums);
@@ -60,6 +61,84 @@ window.onload = async () => {
   console.log("LAST LOG");
 };
 
+// on window load
+const onWindowLoad = async () => {
+  const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=joecocker`;
+  let resp = ``;
+  const input = document.getElementById("inputSearch").value;
+  const endpoint = `${input}`;
+  resp = await fetch(`${API_URL}${endpoint}`, options);
+
+  // EXITS THE EXECUTION IN ONE OF THESE TWO THROWINGS
+  if (resp.status === 404) throw new Error("resource not found");
+  if (!resp.ok) throw new Error("generic error, something wrong with the fetch");
+  // IF ERROR IS THROWN NOTHING HERE WILL BE RUNNING
+  const band = await resp.json();
+
+  console.log("console.log(band) has the following result: ", band);
+
+  const albumList = document.getElementById("albums");
+  albumList.innerHTML = "";
+
+  const artistList = document.getElementById("artist");
+  artistList.innerHTML = "";
+
+  const albumSongs = band.data;
+  console.log({ albumSongs });
+  if (!Array.isArray(albumSongs)) throw new Error("You need to pass an array into the function");
+  albumSongs.forEach(({ album: { id, cover_big, title, type, cover_small }, duration }, index) => {
+    console.log(id);
+    const column = document.createElement("div");
+    column.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1";
+    column.innerHTML = `
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}', '${duration}')">
+                    <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
+                        <img src=${cover_big} class="card-img-top" alt="..." />
+                        <div class="card-body px-0">
+                            <h5 class="card-title line-clamp-1">${title}</h5>
+                            <p class="card-text line-clamp-2">
+                            ${type}
+                            </p>
+                        </div>
+                    </div>
+                  </a>`;
+    albumList.appendChild(column);
+    const obj = {
+      title: `${title}`,
+      image: `${cover_small}`,
+    };
+    albumsArray.push(obj);
+  });
+
+  const artistSongs = band.data;
+  console.log({ artistSongs });
+
+  if (!Array.isArray(artistSongs)) throw new Error("You need to pass an array into the function");
+  artistSongs.forEach(({ album: { id, cover_big, title, type, cover_small }, duration }, index) => {
+    console.log(id);
+    const column = document.createElement("div");
+    column.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1";
+    column.innerHTML = `
+                  <a href="./albumpage.html?albumId=${id}" target=”_blank” class="albumLinks" onclick="appendTitles('${id}','${title}','${cover_big}', '${duration}')">
+                    <div class="card px-3 py-3 mb-3 bg-recentlyPlayed grow" id=div${index}>
+                        <img src=${cover_big} class="card-img-top" alt="..." />
+                        <div class="card-body px-0">
+                            <h5 class="card-title line-clamp-1">${title}</h5>
+                            <p class="card-text line-clamp-2">
+                            ${type}
+                            </p>
+                        </div>
+                    </div>
+                  </a>`;
+    artistList.appendChild(column);
+    const obj = {
+      title: `${title}`,
+      image: `${cover_small}`,
+    };
+    albumsArray.push(obj);
+  });
+};
+
 // album
 const seeAlbumValue = async () => {
   // const input = event.target.value;
@@ -67,6 +146,7 @@ const seeAlbumValue = async () => {
   let resp = ``;
   //const songs = [];
   const input = document.getElementById("inputSearch").value;
+
   console.log(input);
   const endpoint = `${input}`;
   console.log({ endpoint });
@@ -233,10 +313,10 @@ const seeRandomAlbums = async () => {
   if (!Array.isArray(slicedArray)) throw new Error("You need to pass an array into the function");
   slicedArray.forEach(({ album: { id, cover_small }, title_short, duration }, index) => {
     const container = document.createElement("div");
-    container.className = "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 justify-content-start mb-3 grow";
+    container.className = "col-6 col-md-4 col-lg-3 col-xl-2 justify-content-start mb-3 grow";
     container.innerHTML = `
                             <img class="img-fluid img-goodMorning" src=${cover_small} alt=""  onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')"/>
-                            <div class="mb-0 bg-goodMorning flex-align-center pl-2" onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')">${title_short}</div>`;
+                            <div class="mb-0 bg-goodMorning flex-align-center pl-2 line-clamp-1" onclick="appendTitles('${id}','${title_short}','${cover_small}', '${duration}')">${title_short}</div>`;
     goodMorningList.appendChild(container);
     const obj = {
       title: `${title_short}`,

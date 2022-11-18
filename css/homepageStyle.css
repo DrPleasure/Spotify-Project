@@ -56,6 +56,10 @@ body {
   align-items: center;
 }
 
+.arrow-div {
+  justify-content: start;
+}
+
 #profile-div .bi {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.8);
@@ -413,4 +417,30 @@ PROGRESS BAR
  */
 .progress-width {
   width: 350px;
+}
+
+/* DROPDOWN MENU */
+.dropdown-bg {
+  margin-top: 0.5rem;
+  /* background-image: linear-gradient(#300b05, black); */
+  /* border: 3px solid black;
+  border-radius: 12px;
+  overflow: hidden; */
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.color-items {
+  color: white;
+}
+
+.styled-items {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  color: white;
+  text-decoration: none;
 }

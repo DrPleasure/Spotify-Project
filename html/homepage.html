@@ -24,11 +24,11 @@
     <div class="container-fluid">
       <div class="row">
         <!-- SIDEBAR -->
-        <div class="column col-md-3 col-lg-2 padding-top" id="sidebar">
+        <div class="column12 col-md-3 col-lg-2 padding-top" id="sidebar">
           <div id="logo" class="flex-align-center mb-4 grow">
             <img class="img-fluid" src="/assets/Spotify-Logo-White.jpeg" alt="spotify logo" />
           </div>
-          <div id="home" class="sidebar-align-left grow d-sm-none d-md-block">
+          <div id="home" class="sidebar-align-left grow d-none d-md-block">
             <i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span>
           </div>
           <!-- Search - collapse -->
@@ -40,18 +40,18 @@
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            <div id="search" class="sidebar-align-left grow">
+            <div id="search" class="sidebar-align-left grow mb-3">
               <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
             </div>
           </a>
 
-          <div id="library" class="sidebar-align-left mb-4 grow d-sm-none d-md-block">
+          <div id="library" class="sidebar-align-left mb-4 grow d-none d-md-block">
             <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
           </div>
-          <div id="playlist" class="mb-2 sidebar-align-left grow d-sm-none d-md-block">
+          <div id="playlist" class="mb-2 sidebar-align-left grow d-none d-md-block">
             <i class="bi bi-plus-square mr-3"></i><span class="sidebar-text">Create Playlist</span>
           </div>
-          <div id="likedSongs" class="sidebar-align-left grow d-sm-none d-md-block">
+          <div id="likedSongs" class="sidebar-align-left grow d-none d-md-block">
             <img
               class="img-fluid img-small mr-3"
               src="/assets/purple-heart.png"
@@ -60,10 +60,10 @@
           </div>
 
           <!-- DIVIDER -->
-          <div class="translucidLine d-sm-none d-md-block"></div>
+          <div class="translucidLine d-none d-md-block"></div>
 
           <!-- SIDEBAR - LIST DIV -->
-          <ul id="sidebarList" class="sidebar-list d-sm-none d-md-block">
+          <ul id="sidebarList" class="sidebar-list d-none d-md-block">
             <!-- <li class="sidebar-items sidebar-text">Library</li>
             <li class="sidebar-items sidebar-text">Library</li>
             <li class="sidebar-items sidebar-text">Library</li>
@@ -74,7 +74,8 @@
         <div class="column col-sm-12 col-md-9 col-lg-10 padding-top">
           <!-- PROFILE SECTION -->
           <div id="profile-div" class="mb-4">
-            <div class="arrow-div d-flex d-sm-none d-lg-block">
+            <!-- <div class="arrow-div d-none d-md-block"> -->
+            <div class="d-flex">
               <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
               <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
             </div>
@@ -109,12 +110,12 @@
               >
                 <i class="bi bi-person-circle mr-2"></i><span class="truncate">SpotifyProfile and asdf</span>
               </button>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3">
-                <button class="dropdown-item" type="button">Action</button>
-                <hr />
-                <button class="dropdown-item" type="button">Another action</button>
-                <hr />
-                <button class="dropdown-item" type="button">Something else here</button>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3 dropdown-bg">
+                <a href="./profile.html" target="”_blank”" class="color-items grow styled-items" type="button"
+                  >Log in</a
+                >
+                <!-- <hr /> -->
+                <!-- <button class="dropdown-item color-items" type="button">Backoffice</button> -->
               </div>
             </div>
           </div>
@@ -154,7 +155,7 @@
           <div id="recentlyPlayed-div" class="mt-4">
             <div>
               <h4 id="recentlyPlayedHeader">Artist</h4>
-              <span id="podcastsToTry">Podcasts we think you'll get hooked on</span>
+              <span id="podcastsToTry">Artists that you can get hooked on</span>
             </div>
 
             <span id="seeAllArtist" class="grow">SEE ALL</span>
