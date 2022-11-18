@@ -33,12 +33,10 @@ window.onload = async () => {
       let results = data;
       console.log(data.artist.id);
 
-      console.log(results);
-
       for (let i = 0; i < results.tracks.data.length; i++) {
         let song = results.tracks.data[i];
         console.log(song);
-        console.log(song.artist.id);
+
         let artist = data.artist.id;
         let seconds = song.duration;
 
@@ -128,6 +126,92 @@ fetch(
 
     container.appendChild(anchorTag);
   });
+
+// FUNCTION TO PLAY MUSIC ON PLAY BUTTON
+
+let audio;
+function playAudio(url) {
+  if (audio) {
+    audio.pause();
+  }
+  audio = new Audio(url);
+  audio.volume = 0.5;
+  audio.play();
+}
+function pauseAudio() {
+  if (audio) {
+    audio.pause();
+  }
+}
+
+const playMusic = function () {
+  fetch(
+    `https://striveschool-api.herokuapp.com/api/deezer/album/${params}`,
+    options
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      // DEFINE URL
+
+      function makeUrl(url) {
+        if (audio) {
+          audio.pause();
+        }
+        audio = new Audio(url);
+        audio.volume = 0.5;
+        audio.play();
+      }
+      let bestSong = data.tracks.data[0].preview;
+      makeUrl(bestSong);
+      console.log(bestSong);
+    });
+  (function () {
+    "use strict";
+
+    function makeUrl(url) {}
+
+    /* const URL =
+      "https://cdns-preview-b.dzcdn.net/stream/c-b1f256259bacb78f1857561e3b297122-2.mp3"; */
+
+    const context = new AudioContext();
+    const playButton = document.querySelector("#play");
+
+    let yodelBuffer;
+
+    window
+      // .fetch(bestSong)
+      .then((response) => response.arrayBuffer())
+      .then((arrayBuffer) => context.decodeAudioData(arrayBuffer))
+      .then((audioBuffer) => {
+        playButton.disabled = false;
+        yodelBuffer = audioBuffer;
+      });
+
+    playButton.onclick = () => play(yodelBuffer);
+
+    function play(audioBuffer) {
+      const source = context.createBufferSource();
+      source.buffer = audioBuffer;
+      source.connect(context.destination);
+      source.start();
+    }
+  })();
+
+  // TOGGLE PAUSE AND PLAY ONCLICK
+  let nav = false;
+
+  function playAudio() {
+    x.play();
+  }
+
+  function pauseAudio() {
+    x.pause();
+  }
+
+  function toggleNav() {
+    nav ? closeNav() : openNav();
+  }
+};
 
 // <a class="text-deco-none" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >   <h2  >More by</h2> </a>
 
