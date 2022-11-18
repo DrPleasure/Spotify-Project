@@ -6,6 +6,10 @@ const params = new URLSearchParams(window.location.search).get("albumId");
 
 console.log(params);
 
+const artistParams = new URLSearchParams(window.location.search).get("albumId");
+
+console.log(artistParams);
+
 // API INTEGRATION
 
 const options = {
@@ -27,20 +31,24 @@ window.onload = async () => {
     .then((data) => {
       console.log(data);
       let results = data;
+      console.log(data.artist.id);
 
       console.log(results);
 
       for (let i = 0; i < results.tracks.data.length; i++) {
         let song = results.tracks.data[i];
         console.log(song);
-
+        console.log(song.artist.id);
+        let artist = data.artist.id;
         let seconds = song.duration;
 
         let albumTr = document.createElement(`tr`);
         albumTr.innerHTML = `<tr>
             <th>${[i] * 1 + 1}</th>
             <td> <span class="table-title"> ${song.title} </span>
-            </br> <a style="color: white" href="homepage.html" <p>
+            </br> <a style="color: white" href="artistpage.html?artistId=${
+              song.artist.id
+            }"" <p>
              ${song.artist.name} </p> </a>
             </td>
             <td> ${secondsConvert(seconds)} </td>
@@ -64,7 +72,9 @@ fetch(
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
+    console.log(data.artist.id);
 
+    let artist = data.artist.id;
     let results = data.results;
     let seconds = data.duration;
     let date = data.release_date;
@@ -81,7 +91,7 @@ fetch(
                        <div class="row  d-flex" id="album-data">
                    <p id="artist"> <img src="${
                      data.artist.picture
-                   }"> <a href="homepage.html"> ${
+                   }"> <a href="artistpage.html?artistId=${artist}"> ${
       data.artist.name
     } </a> · </p>  <p id=""> ${year} ·
       </p>  <p> ${data.nb_tracks} songs, <span id="opaque"> ${secondsToHms(
