@@ -8,7 +8,9 @@ const currentsongplaylist=document.querySelector('.currentsongplaylist')
 const card=document.querySelector('#cardrow')
 const search= new URLSearchParams(window.location.search)
 const artistId= search.get('artistId')
-const fixedImage = document.getElementById("fixedImage")
+const fixedImage= document.getElementById("fixedImage")
+const bold=document.querySelector('.bold')
+const faded=document.querySelector('.faded')
 const options = {
 	method: 'GET',
 	headers: {
@@ -25,10 +27,10 @@ obj.data.forEach((songs,index) => {
   table.innerHTML+=`
                           <th scope="row">${index+1}</th>
                           <td>
-                         <img src="${songs.album.cover_small}" width="50px" height='50px'>
+                         <img src="${songs.album.cover_small}" width="50px" height='50px'/>
                           </td>
                           <td>${songs.title}</td>
-                          <td>${songs.rank}</td>
+                          <td>${listNers(songs.rank)}</td>
                           <td>${defineDuration(songs.duration)}</td>
                     
   `
@@ -40,7 +42,7 @@ obj.data.forEach((songs,index) => {
   console.error(error)}
 
 }
-
+// this is onclick event of album when you click it brings the artist album
 const albumsButton=document.querySelector('#albums')
 albumsButton.addEventListener('click',()=>{
  fetch(
@@ -81,7 +83,7 @@ try {currentSong.innerHTML+=`
                 <i class="bi bi-patch-check-fill"></i>
                 Verified Artist
                 <h1>${dataFetch.name}</h1>                
-                <p>${dataFetch.nb_fan} monthly listners</p>          
+                <p>${listNers(dataFetch.nb_fan)} monthly listners</p>          
                  </div>`         
                  artistpickplaylist.innerHTML=`
  <img src="${dataFetch.picture_small}">
@@ -100,24 +102,17 @@ try {currentSong.innerHTML+=`
   console.error(error)}
 }
 
+// function ChangePlayBelow(){
+// fixedImage.innerHTML=`<img class="img-fluid mr-2 grow" src="${play.picture}" alt="" id="fixedImage" />`
+// bold.innerHTML=`<p class="bold">${play.title}</p>`
 
-const appendTitles = (id, title, imageLink) => {
-  let text = ``;
-  const li = document.createElement("li");
-  li.className = "sidebar-items sidebar-text";
-  li.innerText = `${title}`;
-  text = li.innerText;
-  sidebarTitles.appendChild(li);
-
-  console.log("local storage: ", localStorage.setItem(`${id}`, `${title}`));
-  storage.push(localStorage);
-  console.log({ storage });
-
-  fixedImage.src = `${imageLink}`;
-};
+// }
 
 const defineDuration = (t) => {
   return Math.floor(t / 60) + ':' + ('0' + Math.floor(t % 60)).slice(-2)
+}
+const listNers= (s)=>{
+  return Math.floor(s /1000) + ',' + ('0' + Math.floor(s % 1000)).slice(-3)
 }
 
 
