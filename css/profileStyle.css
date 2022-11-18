@@ -30,3 +30,14 @@ nav {
   text-align: center;
   font-weight: bold;
 }
+
+.or-text {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  /* padding: 0 0.5rem; */
+  /* background-color: white; */
+  transform: translateY(20%);
+  /* display: inline-block; */
+  /* z-index: 1; */
+}
