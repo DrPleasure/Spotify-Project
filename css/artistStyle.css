@@ -558,4 +558,17 @@ PROGRESS BAR
     box-shadow: 5px 5px 8px #282828;
     transform: scale(1.1);
   }
- 
+@media (max-width:960px) {
+  #sidebar{
+    display: none;
+  }
+}
+@media(max-width:740px) {
+  .Artistpick{
+    display: none;
+  }
+  .btn{
+    margin: 10px;
+    width: 100%;
+  }
+  }
