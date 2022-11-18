@@ -55,7 +55,7 @@ albumsButton.addEventListener('click',()=>{
       for(let listResult of data.data){
         console.log(listResult)
       card.innerHTML+=`
-      <div class="col-3 mb-3">
+      <div class="col-sm-3 col-md-6 col-xl-3 mb-3">
       <div id='cardinfo'class="card">
       <a href='https://rateyourmusic.com/artist/wizkid'><img src="${listResult.album.cover_xl
       }" class="card-img-top img-fluid" alt="..."></a>

@@ -28,24 +28,34 @@
           <div id="logo" class="flex-align-center mb-4 grow">
            <a href="homepage.html"><img class="img-fluid" src="/assets/Spotify-Logo-White.jpeg" alt="spotify logo" /></a>
           </div>
-          <div id="home" class="sidebar-align-left grow">
-            <a id='home-link' href="homepage.html"><i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span></a>
+          <div id="home" class="sidebar-align-left grow d-none d-md-block">
+            <i class="bi bi-house-door mr-3"></i><span class="sidebar-text">Home</span>
           </div>
-          <div id="search" class="sidebar-align-left grow">
-            <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
-          </div>
+          <!-- Search - collapse -->
+          <a
+            class="search-anchor"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <div id="search" class="sidebar-align-left grow">
+              <i class="bi bi-search mr-3"></i><span class="sidebar-text">Search</span>
+            </div>
+          </a>
           <div id="library" class="sidebar-align-left mb-4 grow">
             <i class="bi bi-music-note-list mr-3"></i><span class="sidebar-text">Library</span>
           </div>
           <div id="library" class="sidebar-align-left grow">
             <i class="bi bi-plus-square mr-3"></i><span class="sidebar-text">Create Playlist</span>
           </div>
-          <div id="library" class="sidebar-align-left grow">
+          <div id="likedSongs" class="sidebar-align-left grow d-none d-md-block">
             <img
-            class="img-fluid img-small mr-3"
-            src="/assets/purple-heart.png"
-            alt="white heart on purple background"
-          /></i><span class="sidebar-text">Liked Songs</span>
+              class="img-fluid img-small mr-3"
+              src="/assets/purple-heart.png"
+              alt="white heart on purple background"
+            /><span class="sidebar-text">Liked Songs</span>
           </div>
         </div>
 
@@ -96,12 +106,13 @@
             <button type="button" data-toggle="modal" data-target="#exampleModal" id="follow-btn">Follow</button>
             <span>...</span>
         </div>
+        <!-- table that display artist songs -->
         <div class="currentsongplaying">
         <div class="orderlist">
         <h5>Popular</h5>
         <div class="playlisttable">
             <table id='table' class="table table-borderless my-0">
-                <tbody>
+              <tbody>
                     <!-- <tr>
                         <th scope="row"></th>
                         <td><img src="/assets/recentlyadded.jpeg" width="50px" height='50px'></td>
@@ -142,6 +153,7 @@
               <a id='moreMusic' href="#" class="p-2">SEE MORE</a>
         </div>
         </div>
+        <!-- artist song right div -->
         <div class="Artistpick">
           <h5> Artist pick</h5>
           <div class="artpickby">
