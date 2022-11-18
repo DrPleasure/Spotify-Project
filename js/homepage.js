@@ -63,7 +63,7 @@ window.onload = async () => {
 
 // on window load
 const onWindowLoad = async () => {
-  const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=queen`;
+  const API_URL = `https://striveschool-api.herokuapp.com/api/deezer/search?q=joecocker`;
   let resp = ``;
   const input = document.getElementById("inputSearch").value;
   const endpoint = `${input}`;
