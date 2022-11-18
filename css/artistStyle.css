@@ -140,8 +140,6 @@ background-color: #000000;
   .followArtist .bi{
     color: green;
     font-size: 4rem;
-    
-    
   }
   #follow-btn{
     background: none;
@@ -340,6 +338,9 @@ MIDDLE FIXED
   display: flex;
   justify-content: start;
   align-items: center;
+}
+.row{
+  width: 100%;
 }
 
 /* -----------

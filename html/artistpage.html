@@ -53,8 +53,12 @@
         <div class="column col-10 padding-top">
           <div id="profile-div">
             <div class="arrow-div">
-              <div class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
-              <div class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
+              <div class="d-flex">
+                <div onclick="window.history.go(-1); return false;"
+                type="submit" class="left-arrow round mr-2"><i class="bi bi-chevron-left"></i></div>
+                <div onclick="window.history.go(+1); return false;"
+                type="submit" class="right-arrow round"><i class="bi bi-chevron-right"></i></div>
+              </div>
             </div>
 
             <div class="btn-group" id="profile">
@@ -65,14 +69,14 @@
                 data-display="static"
                 aria-expanded="false"
               >
-                <i class="bi bi-person-circle mr-2"></i>SpotifyProfile
+                <i class="bi bi-person-circle mr-2"></i><span class="truncate">SpotifyProfile and asdf</span>
               </button>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3">
-                <button class="dropdown-item" type="button">Action</button>
-                <hr />
-                <button class="dropdown-item" type="button">Another action</button>
-                <hr />
-                <button class="dropdown-item" type="button">Something else here</button>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right px-3 dropdown-bg">
+                <a href="./profile.html" target="”_blank”" class="color-items grow styled-items" type="button"
+                  >Log in</a
+                >
+                <!-- <hr /> -->
+                <!-- <button class="dropdown-item color-items" type="button">Backoffice</button> -->
               </div>
             </div>
           </div>
@@ -182,7 +186,7 @@
           <div class="col-sm-6 col-lg-3 order-sm-2 order-lg-0">
             <div id="fixed-left">
               <img class="img-fluid mr-2 grow" src="/assets/purple-heart.png" alt="" id="fixedImage" />
-              <div class="title-left mr-4">
+              <div class="title-left mr-2">
                 <p class="bold" id="fixedTitle">Choose an artist or album</p>
                 <p class="faded" id="fixedBand">Breathe the music!</p>
               </div>
