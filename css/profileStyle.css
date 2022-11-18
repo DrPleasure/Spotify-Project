@@ -50,7 +50,7 @@ nav {
 .lock {
   width: 25px;
   object-fit: cover;
-  transform: translateX(-25%) translateY(-175%);
+  transform: translateX(-25%) translateY(-105%);
 }
 
 .faded-text {
@@ -63,15 +63,48 @@ nav {
   align-items: center;
 }
 
-.firstCheck {
-  height: 1rem;
-  width: 1rem;
-}
-
 .checkBtn {
-  width: 10rem;
+  width: 15rem;
   border-radius: 25px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+#forgot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#acountQ {
+  font-weight: bold;
+}
+
+.acc-styling {
+  border-radius: 25px;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  background-color: white;
+  border: 3px solid black;
+}
+
+#terms_and_privacy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#TandC {
+  font-size: 0.85rem;
+  text-align: center;
 }
