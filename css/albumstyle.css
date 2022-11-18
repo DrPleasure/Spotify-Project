@@ -278,3 +278,7 @@ div #card-play:hover {
 .bi-search {
   font-size: 1.5rem;
 }
+
+#homediv {
+  text-decoration: none;
+}
